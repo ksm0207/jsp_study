@@ -1,0 +1,856 @@
+!SESSION 2021-09-17 10:50:13.328 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2021-09-17 10:50:54.356
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2021-09-17 10:50:54.356
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2021-09-17 10:50:55.467
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2021-09-17 10:50:55.522
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-09-17 10:51:09.272
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 10:52:18.045
+!MESSAGE Connection to http://jope.ow2.org/update/jope/site.xml failed on 알려진 호스트가 없습니다 (jope.ow2.org). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (jope.ow2.org)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 10:52:18.271
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on jope.ow2.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2021-09-17 10:59:55.883
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://www.pramati.com/downloads/eclipse/updates/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:396)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.fail(CachingRepositoryManager.java:353)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:244)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:126)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:110)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.runModal(PreloadingRepositoryHandler.java:84)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:190)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2021-09-17 10:59:55.884
+!MESSAGE No repository found at http://www.pramati.com/downloads/eclipse/updates/.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 11:00:39.896
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on 알려진 호스트가 없습니다 (jope.ow2.org). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (jope.ow2.org)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2021-09-17 11:00:40.114
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unknown Host: http://jope.ow2.org/update/jope/content.xml
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:247)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:69)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:89)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:775)
+	at jdk.internal.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:126)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:110)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.runModal(PreloadingRepositoryHandler.java:84)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:190)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: jope.ow2.org
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:246)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1006 2021-09-17 11:00:40.115
+!MESSAGE Unknown Host: http://jope.ow2.org/update/jope/content.xml
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:246)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 11:00:40.124
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on jope.ow2.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2021-09-17 11:00:48.229
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%253A%252F%252Fblog.kakaocdn.net%252Fdn%252FbK7dxA%252FbtqEcGptMsS%252FvpfPdo12Iw4bScUv7lqqrK%252Fimg.png.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:396)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.fail(CachingRepositoryManager.java:353)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:244)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:126)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:110)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.runModal(PreloadingRepositoryHandler.java:84)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:190)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2021-09-17 11:00:48.229
+!MESSAGE No repository found at https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%253A%252F%252Fblog.kakaocdn.net%252Fdn%252FbK7dxA%252FbtqEcGptMsS%252FvpfPdo12Iw4bScUv7lqqrK%252Fimg.png.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2021-09-17 11:01:02.895
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://dl.bintray.com/testng-team/testng-p2-release/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:396)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.fail(CachingRepositoryManager.java:353)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:244)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:126)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:110)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.runModal(PreloadingRepositoryHandler.java:84)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:190)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2021-09-17 11:01:02.895
+!MESSAGE No repository found at http://dl.bintray.com/testng-team/testng-p2-release/.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 11:01:13.294
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on 알려진 호스트가 없습니다 (jope.ow2.org). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (jope.ow2.org)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2021-09-17 11:03:17.465
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2021-09-17 11:03:17.465
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10004 2021-09-17 11:03:17.465
+!MESSAGE "WebSocket server API" will be ignored because a newer version is already installed. 
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2021-09-17 11:03:17.478
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2021-09-17 11:03:17.478
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10004 2021-09-17 11:03:17.478
+!MESSAGE "WebSocket server API" will be ignored because a newer version is already installed. 
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2021-09-17 11:03:17.512
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2021-09-17 11:03:17.512
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10004 2021-09-17 11:03:17.512
+!MESSAGE "WebSocket server API" will be ignored because a newer version is already installed. 
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2021-09-17 11:03:17.513
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2021-09-17 11:03:17.513
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10004 2021-09-17 11:03:17.513
+!MESSAGE "WebSocket server API" will be ignored because a newer version is already installed. 
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-09-17 11:06:42.697
+!MESSAGE Connection to http://download.eclipse.org/technology/m2e/releases/1.15/1.15.0.20200310-1746/plugins/org.eclipse.m2e.core.ui_1.15.0.20200305-1308.jar.pack.gz failed on download.eclipse.org:80 failed to respond. Retry attempt 0 started
+!STACK 0
+org.apache.http.NoHttpResponseException: download.eclipse.org:80 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2021-09-17 11:07:15.348
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2021-09-17 11:07:15.348
+!MESSAGE session context was:(profile=C__Users_user_eclipse_jee-2019-09_eclipse, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,com.sun.xml.bind,2.2.0.v20201118-1845
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,javaewah,1.1.7.v20200107-0831
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.commons.compress,1.19.0.v20200106-2343
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.httpcomponents.httpclient,4.5.10.v20200830-2311
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.httpcomponents.httpclient.win,4.5.10.v20200830-2311
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.httpcomponents.httpcore,4.4.12.v20200108-1212
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.sshd.osgi,2.6.0.v20210201-2003
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.apache.sshd.sftp,2.6.0.v20210201-2003
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.bouncycastle.bcpg,1.65.0.v20200527-1955
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.bouncycastle.bcprov,1.65.1.v20200529-1514
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.buildship.branding,3.1.5.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.buildship.core,3.1.5.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.buildship.stsmigration,3.1.5.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.buildship.ui,3.1.5.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.common.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.connectivity,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.connectivity.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.enablement.sybase.asa.schemaobjecteditor.examples,2.7.200.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.intro,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.common.ui,1.2.200.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.editor.core,1.2.101.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.routineeditor.ui,1.2.101.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.sqlbuilder,1.2.300.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.datatools.sqltools.sqleditor,1.2.201.202009292210
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf,3.9.101.v20201027-0547
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.filetransfer,5.1.101.v20201025-2315
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.identity,3.9.401.v20201027-0550
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.provider.filetransfer,3.2.601.v20201025-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.provider.filetransfer.httpclient45,1.0.301.v20201025-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.provider.filetransfer.httpclient45.win32,1.0.300.v20200816-1842
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.provider.filetransfer.ssl,1.0.200.v20200611-1836
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ecf.ssl,1.2.400.v20200611-2220
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.egit,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.egit.core,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.egit.doc,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.egit.mylyn.ui,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.egit.ui,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.ant,2.11.0.v20200324-0723
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.codegen,2.21.0.v20200708-0547
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.codegen.ecore,2.25.0.v20201231-0738
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.codegen.ecore.ui,2.25.0.v20201231-0738
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.codegen.ui,2.22.0.v20200424-0451
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.common,2.22.0.v20210114-1734
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.databinding.edit,1.7.0.v20210113-0340
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.ecore,2.23.0.v20200630-0516
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.edit,2.16.0.v20190920-0401
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.edit.ui,2.19.0.v20200917-1406
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.importer.ecore,2.10.0.v20200324-0723
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.importer.java,2.11.0.v20200324-0723
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.emf.importer.rose,2.10.0.v20200324-0723
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.webapp,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.xml,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jgit,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jgit.archive,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jgit.ssh.apache,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jst.ws,1.0.900.v201910301957
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jst.ws.consumption.ui,1.1.1000.v201910301957
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jst.ws.creation.ui,1.0.1000.v201910301957
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jst.ws.ui,1.1.0.v201910301957
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jaxrs,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jpa,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jsf,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay.ui,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.bugzilla.core,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.bugzilla.ide,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.bugzilla.ui,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.core,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.identity.core,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.net,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.notifications.core,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.notifications.feed,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.notifications.ui,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.repositories.core,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.repositories.ui,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.screenshots,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.ui,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.workbench,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.commons.xmlrpc,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.context.core,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.348
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.context.tasks.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.context.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.debug.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.discovery.core,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.discovery.ui,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.help.ui,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.ide.ant,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.ide.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.java.tasks,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.java.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.monitor.core,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.monitor.ui,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.resources.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.bugs,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.core,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.index.core,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.index.ui,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.search,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.tasks.ui,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.team.ui,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.ant,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.asciidoc,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.asciidoc.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.confluence,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.confluence.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.context.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.help.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.html,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.markdown,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.markdown.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.mediawiki,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.mediawiki.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.osgi,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.tasks.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.textile,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.textile.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.tracwiki,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.tracwiki.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.twiki,3.0.38.20200817211131
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.twiki.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.mylyn.wikitext.ui,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.350
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.core,1.10.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.core.databinding,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.core.java,1.9.2.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.core.lib,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.core.ui,1.10.0.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.doc.user,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.layout.group,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.os,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.os.win32,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.SWT_AWT,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.databinding,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.databinding.emf,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.doc.user,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.nebula,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.rcp.swing2swt,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.runtime,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.runtime.lib,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.FormLayout,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.FormLayout.lib,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.MigLayout,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.MigLayout.lib,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.databinding,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.doc.user,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.java6,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swing.jsr296,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swt,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.wb.swt.widgets.baseline,1.9.1.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.xsd,2.18.0.v20201230-0836
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.xsd.edit,2.11.0.v20200723-0820
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.gradle.toolingapi,6.8.0.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.sonatype.m2e.mavenarchiver,0.17.5.202002191804
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,minimal-json,0.9.5
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.buildship,3.1.5.v20210113-0929
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.common.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.connectivity.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.connectivity.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.connectivity.oda.designer.core.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.connectivity.oda.designer.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.connectivity.oda.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.apache.derby.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.hsqldb.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.ibm.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.ingres.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.jdbc.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.jdt.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.msft.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.mysql.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.oda.designer.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.oda.feature,1.14.102.201911221603
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.oracle.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.postgresql.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.sap.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.sqlite.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.enablement.sybase.feature,1.14.200.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.intro,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.modelbase.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.data.feature,1.14.200.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.ddl.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.ddlgen.feature,1.14.200.202009292210
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.feature,1.14.200.202009292210
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.parsers.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.results.feature,1.14.200.202008192017
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqldevtools.sqlbuilder.feature,1.14.200.202009292210
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.datatools.sqltools.doc.user,1.14.102.201911250848
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ecf.core.feature,1.5.701.v20201027-0550
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ecf.core.ssl.feature,1.1.500.v20200812-2314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ecf.filetransfer.feature,3.14.1702.v20201025-2315
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ecf.filetransfer.httpclient45.feature,1.0.702.v20201025-2303
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ecf.filetransfer.ssl.feature,1.1.400.v20200812-2314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.egit,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.egit.mylyn,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.codegen.ecore,2.25.0.v20201231-0738
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.codegen.ecore.ui,2.25.0.v20201231-0738
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.codegen,2.21.0.v20200708-0547
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.codegen.ui,2.22.0.v20200424-0451
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.common,2.22.0.v20210114-1734
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.converter,2.15.0.v20200324-0723
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.databinding.edit,1.8.0.v20210113-0340
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.ecore,2.23.0.v20200630-0516
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.edit,2.16.0.v20190920-0401
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf.edit.ui,2.20.0.v20200917-1406
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.emf,2.25.0.v20210114-1734
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.http,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.io,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.security,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.server,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.servlet,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.util,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jetty.util.ajax,9.4.39.v20210325
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.jgit,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jgit.gpg.bc,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.jgit.gpg.bc,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.jgit.http.apache,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.jgit.http.apache,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.jgit.ssh.apache,5.11.0.202103091610-r
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.feature,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jaxrs.feature,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jpa.feature,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jsf.feature,1.4.4.20201128-1705
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.bugzilla_feature,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.commons,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.commons.identity,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.commons.notifications,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.commons.repositories,1.17.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.context_feature,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.discovery,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.ide_feature,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.java_feature,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.monitor,3.25.2.v20200813-0821
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.tasks.ide,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.team_feature,3.25.2.v20200828-1617
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.wikitext.editors_feature,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn.wikitext_feature,3.0.38.202008172112
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.mylyn_feature,3.25.2.v20200814-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.core.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.core.java.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.core.ui.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.doc.user.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.layout.group.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.rcp.SWT_AWT_support,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.rcp.doc.user.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.rcp.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.swing.doc.user.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.swing.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.wb.swt.feature,1.9.7.202107011314
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: osgi.bundle,org.sonarsource.sonarlint.core.sonarlint-core,5.2.0.28259
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2021-09-17 11:07:15.351
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.sonatype.m2e.mavenarchiver.feature,0.17.5.202002191804
