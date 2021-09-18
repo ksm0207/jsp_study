@@ -40,9 +40,12 @@ public class SingUpServlet extends HttpServlet {
 		System.out.println("Server Data =>" + name + " " + id + " " + password + " " + password2);
 		
 		PrintWriter out = response.getWriter();
-		
+	
 		if (password.contains(password2)) {
 			out.print("success");
+			if(id.equals("admin") && password.equals("1234") && password2.equals("1234")) {
+				out.print("admin");
+			}
 		}else {
 			out.print("fail");
 		}

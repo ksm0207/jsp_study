@@ -1,7 +1,17 @@
+commentBorder=\#C7DD0C | null | null | false | null | null
+commentText=\#C7DD0C | null | null | false | null | null
+declBoder=\#FFFFFF | null | null | null | null | null
+doctypeExternalId=\#FFFFFF | null | null | null | null | null
+doctypeExternalPubref=\#FFFFFF | null | null | null | null | null
+doctypeExtrenalSysref=\#FFFFFF | null | null | null | null | null
+doctypeName=\#FFFFFF | null | null | null | null | null
 eclipse.preferences.version=1
 entityReference=\#ff0000 | null | false | false | false | false
 newFileTemplateName=New HTML File (5)
+overriddenByCSS=,commentBorder,commentText,declBoder,doctypeExternalId,doctypeExternalPubref,doctypeExtrenalSysref,doctypeName,tagAttributeEquals,xmlContent,
+tagAttributeEquals=\#D8D8D8 | null | null | null | null | null
 tagAttributeName=\#dbf973 | null | false | false | false | false
 tagAttributeValue=\#c68cff | null | false | false | false | false
 tagBorder=\#ffffff | null | false | false | false | false
 tagName=\#f23e2f | null | false | false | false | false
+xmlContent=\#D8D8D8 | null | null | null | null | null
