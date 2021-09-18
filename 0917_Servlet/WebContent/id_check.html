@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		console.log("function On");
+		
+		$("#btn").on("click",function(){
+			
+			let id = $("#id").val();
+			let pw = $("#pw").val();
+			
+			
+			let data = {id,pw}; // data --> 'id' 만 넘기면 null 발생
+			
+			$.ajax({
+				url : "Check",
+				data: data,
+				success : function (data) {
+					alert(data);
+					if(data == "success"){
+						$("#res").text("admin 님 안녕하세요 ?");
+					}else{
+						$("#res").text("유효하지 않은 아이디 이거나 비밀번호가 틀렸습니다.");
+					}
+					
+				}
+			});
+			
+		});
+	})
+
+</script>
+</head>
+<body>
+	<label for="id">아이디 :</label>
+	<input type="text" id="id" name="id"><br>
+	<label for="pw">비밀번호 :</label>
+	<input type="password" id="pw" name="pw"><br>
+	<button id="btn">Login</button><br>
+	<span id="res"></span>
+
+</body>
+</html>

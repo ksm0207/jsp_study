@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		console.log("ready");
+		
+		$("#singUp_btn").on("click",function(){
+			
+			// 서버에 form에 속한 데이터 전송
+			document.forms[0].submit();
+		});
+	})
+
+</script>
+<body>
+
+<form method="POST" action="Hobby" >
+
+	<table>
+		<caption>회원가입 테이블</caption>
+		<colgroup>
+			<col width="50px">
+			<col width="*">
+		</colgroup>
+		
+		<!-- name은 서버로 전송되는 파라미터 입니다. -->
+		<tbody>
+		
+			<tr>
+				<td>
+					<label for="name">이름</label>
+					<input id = "name" name = "name" type="text"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="age">취미</label><br>
+					
+					<input id = "hobby" name = "hobby" type="checkbox" value="음악감상">음악감상<br>
+					
+					<input id = "hobby" name = "hobby" type="checkbox" value="영화감상">영화감상<br>
+					
+					<input id = "hobby" name = "hobby" type="checkbox" value="Starcraft">게임<br>
+					
+				</td>
+			</tr>
+			
+
+			<tr >
+				<td colspan="2">
+					<button type="button" id="singUp_btn">전송</button>				
+				</td>			
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+	
+</form>
+
+</body>
+</html>

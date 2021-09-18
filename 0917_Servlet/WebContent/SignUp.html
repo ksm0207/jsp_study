@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		console.log("ready");
+		
+		$("#singUp_btn").on("click",function(){
+			console.log("가입 버튼");
+			
+			let name = $("#name").val();
+			let age = $("#age").val();
+			let phone = $("#phone").val();
+			let address = $("#address").val();
+			
+			console.log(`${name}`);
+			
+			if(name == ""){
+				alert("이름 입력란에 아무런 값이 없습니다.");
+				$("#name").focus();
+				return false;
+			}
+			
+			if(age == ""){
+				alert("나이 입력란에 아무런 값이 없습니다.");
+				$("#age").focus();
+				return false;
+			}
+			
+			if(phone == ""){
+				alert("연락처 입력란에 아무런 값이 없습니다.");
+				$("#phone").focus();
+				return false;
+			}
+			
+			if(address == ""){
+				alert("주소 입력란에 아무런 값이 없습니다.");
+				$("#address").focus();
+				return false;
+			}
+			
+			// form에 데이터 전송
+			document.forms[0].submit();
+			
+			
+			
+			
+		});
+	})
+
+</script>
+<body>
+
+<form method="POST" action="SingUpServlet" >
+
+	<table>
+		<caption>회원가입 테이블</caption>
+		<colgroup>
+			<col width="50px">
+			<col width="50px">
+			<col width="50px">
+			<col width="*">
+		</colgroup>
+		
+		<!-- name은 서버로 전송되는 파라미터 입니다. -->
+		<tbody>
+			<tr>
+				<td>
+					<label for="name">이름</label>
+					<input id = "name" name = "name" type="text"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="age">나이</label>
+					<input id = "age" name = "age" type="text"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="phone">연락처</label>
+					<input id = "phone" name = "phone" type="text"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="phone">주소</label>
+					<input id = "address" name = "address" type="text"><br>
+				</td>
+			</tr>
+
+			<tr >
+				<td colspan="2">
+					<button type="button" id="singUp_btn">가입</button>				
+				</td>			
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+	
+</form>
+
+</body>
+</html>
