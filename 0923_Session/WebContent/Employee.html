@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
 
@@ -27,7 +30,13 @@
 		$("#search").on("click",function(){
 			console.log("검색");
 			$("#table tbody").hide();
-			$("#dialog").show();
+			
+			$("#dialog").dialog({
+				title : "부서코드",
+				width : 500,
+				modal : true,
+			});
+			
 		});
 		
 		$("#dept_res").on("click",function(){
@@ -50,11 +59,10 @@
 			.done(function(data){
 				
 				alert("부서코드 결과 입니다.");
-				$("#table tbody").html(data);
+				$("#dialog").dialog("close");
 				$("#table tbody").show();
-				
-				
-				
+				$("#table tbody").html(data);
+			
 			})
 		});
 	});
@@ -88,13 +96,13 @@
 
 	<div id="wrap">
 		<header>
-			<h2>Employee ...</h2>
+			<h2></h2>
 		</header>
 		<article>
 		
 			<table id="table">
 			
-				<caption>사원 List 입니다</caption>
+				<caption>사원 List</caption>
 				<colgroup>
 					<col width="60px">
 					<col width="120px">
