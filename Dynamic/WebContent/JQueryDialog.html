@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQUery Dialog 사용하기</title>
+
+<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css" />
+<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	
+});
+
+/*
+	$(function(){ //함수실행
+		$("#dia_bt").click(function(){ //dia_bt라는 아이디를 클릭했을 때
+			$("#dia_rs").dialog({ // dia_rs를 dialog오버레이창의로 띄워주고 'dialog창'이라는 제목과 넓이 800을 설정합니다
+				title : "dialog 창",
+				width : 800,
+				modal : true, //dialog창이 올라왔을 때 dialog이전 레이어(즉 dialog창뒤에 있는것)을 보호할것인가 하지않을것이가 정합니다
+			});
+		})
+	});
+*/
+</script>
+</head>
+<body>
+	<div id="dia_bt"><h1>jQuery Dialog창 띄우기</h1></div>
+		<div id="dia_rs" style="display:none;">Hello! jQUery World!!</div>
+</body>
+</html>
