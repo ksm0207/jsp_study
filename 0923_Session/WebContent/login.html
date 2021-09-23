@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function() {
+		$("#btn").on("click",function(){
+			console.log("event");
+			
+			let id = $("#id").val();
+			let pw = $("#pw").val();
+			
+			if(id.trim().length<=0){
+				console.log(id.trim().length<=0);
+				alert("아이디를 입력하세요.");
+				$("#id").val("");
+				$("#id").focus();
+				return false;
+			}
+			if(pw.trim().length<=0){
+				alert("비밀번호를 입력하세요.");
+				$("#pw").val("");
+				$("#pw").focus();
+				return false;
+			}
+			
+
+			let user_data = {id,pw};
+			
+			$.ajax({
+				url:document.forms[0].action="Login",
+				data : user_data,
+				method: "POST"
+			})
+			.done(function(data){	
+				if(data == "0"){
+					
+					$("#not_valid").text("아이디 또는 비밀번호가 틀립니다.");
+				}else{
+					alert("안녕하세요?");
+					location.href="Main";	
+				}
+			});
+	
+			// 현재문서에서 가장 첫번째 폼을 서버경로를 변경해준다.
+			
+			
+			
+			
+		});
+	})
+
+</script>
+
+</head>
+<body>
+
+	<form action="" method="POST">
+		
+		<label>아이디 :</label>
+		<input type="text" id="id" name = "id"><br>
+		<span id="not_valid" style="color:red"></span><br>
+		
+		
+		<label>비밀번호 :</label>
+		<input type="text" id="pw" name = "pw"><br>
+	
+		
+		<input type="button" value="Login" id="btn">
+		
+	</form>
+
+</body>
+</html>
