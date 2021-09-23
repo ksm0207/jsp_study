@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- Result Map 예제 파일 -->
+
+<mapper namespace="emp">
+
+	<select id="all" resultType="vo.EmpVO">
+			select * from employees
+	</select>
+	
+	<select id="dept_id" resultType="vo.EmpVO">
+		select *
+		from employees
+		where department_id = #{dept_no}
+	</select>
+	
+
+</mapper>

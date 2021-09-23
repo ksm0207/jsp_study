@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+<script type="text/javascript">
+
+	
+	$(function(){
+		
+		$("#all").on("click",function(){
+			console.log("전체보기");
+			
+			$.ajax({
+				url:"EmpAll",
+			})
+			.done(function(data){
+				alert("전체 결과 입니다.");
+				
+				$("#table tbody").html(data);
+			})
+			
+		});
+		
+		
+		$("#search").on("click",function(){
+			console.log("검색");
+			$("#table tbody").hide();
+			$("#dialog").show();
+		});
+		
+		$("#dept_res").on("click",function(){
+			console.log("department_id 가져오기");
+			
+			let dept_id = $("#department_id").val();
+			console.log(dept_id);
+			
+			data = {dept_id};
+			
+			$.ajax({
+				url:"DeptAll",
+				data: data,
+			})
+			.done(function(data){
+				alert("부서코드 결과 입니다.");
+				
+				$("#table tbody").html(data);
+				$("#table tbody").show();
+			})
+		});
+	});
+	
+</script>
+<style>
+	#wrap{
+		margin: auto;
+	}
+	
+	#table{
+		border-collapse: collapse;
+		width:600px;
+	}
+	#table th{
+		border : 1px solid black;
+		padding: 4px;
+		background-color: #efefef;
+	}
+	#table td{
+		border: 1px solid black;
+		padding: 3px;
+	}
+</style>
+
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<h2>Employee ...</h2>
+		</header>
+		<article>
+		
+			<table id="table">
+			
+				<caption>사원 List 입니다</caption>
+				<colgroup>
+					<col width="60px">
+					<col width="120px">
+					<col width="*">
+					<col width="80px">
+				</colgroup>
+					<thead>
+						<tr>
+							<td colspan="4">
+								<input type="button" id="all" value="전체보기">
+								<input type="button" id="search" value="부서검색">
+							</td>
+						</tr>
+						<tr>
+							<th>사번</th>
+							<th>이름</th>
+							<th>직업</th>
+							<th>부서코드</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						
+					</tbody>
+			</table>
+			
+			<div id="dialog"  title="부서코드" style="display: none">
+			 	<input type="text" id="department_id" name="dept_id">
+			 	<input type="button" value="확인" id="dept_res">
+  			</div>
+			
+			
+		
+		</article>
+	
+	</div>
+
+</body>
+</html>
