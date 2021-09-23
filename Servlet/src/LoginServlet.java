@@ -1,4 +1,4 @@
-package pm;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,19 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vo.ExVO;
-
 /**
- * Servlet implementation class Main
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/Main")
-public class Main extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Main() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,26 +30,24 @@ public class Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 응답시 한글처리
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		// 응답 요청을 위한 Stream
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		System.out.println(id + ""+ pw);
+		
 		PrintWriter out = response.getWriter();
 		
-		// 접속자들마다 하나씩 가지는 Session 생성하기
-		HttpSession session = request.getSession();
-		
-		// 로그인이 되었다면 Session에는 vo 데이터가 저장되어 있지만
-		// 그렇지 않다면 vo에는 데이터가 유효하지 않는다고 봐야함.
-		
-		ExVO vo = (ExVO) session.getAttribute("vo");
-		
-		if(vo == null) {
-			out.print("<a href='login.html'>[로그인]</a>");
+		if(id.equals("admin") && pw.equals("1234")) {
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("id",id);
+			out.print("0");
 		}else {
-			out.print( vo.getUser_name() + "<a href='Logout'>  [로그아웃]</a>");
+			out.print("1");
 		}
-		
 	}
 
 	/**

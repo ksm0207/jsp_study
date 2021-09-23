@@ -11,70 +11,29 @@
 
 <script type="text/javascript">
 
-	
 	$(function(){
 		
 		$("#all").on("click",function(){
-			console.log("전체보기");
-			
+			console.log("ready");
 			$.ajax({
-				url:"EmpAll",
+				url:"EmpServlet",
 			})
 			.done(function(data){
 				$("#table tbody").html(data);
-			})
-			
-		});
-		
-		
-		$("#search").on("click",function(){
-			console.log("검색");
-			$("#table tbody").hide();
-			
-			$("#dialog").dialog({
-				title : "부서코드",
-				width : 500,
-				modal : true,
-				
 			});
 			
 		});
-		
-		$("#dept_res").on("click",function(){
-			console.log("department_id 가져오기");
-			
-			let dept_id = $("#department_id").val();
-			console.log(dept_id);
-			
-			if(dept_id.trim().length <= 0){
-				alert("부서코드를 입력해주세요.");
-				return false;
-			}
-			
-			data = {dept_id};
-			
-			$.ajax({
-				url:"DeptAll",
-				data: data,
-			})
-			.done(function(data){
-				
-				alert("부서코드 결과 입니다.");
-				$("#dialog").dialog("close");
-				$("#table tbody").show();
-				$("#table tbody").html(data);
-			
-			})
-		});
 	});
-	
+
+
 </script>
+
 <style>
 	#table{
-		border-collapse: collapse;
-		width:600px;
-		margin: auto;
-	}
+			border-collapse: collapse;
+			width:600px;
+			margin: auto;
+		}
 	#table th{
 		border : 1px solid black;
 		padding: 4px;
@@ -87,10 +46,9 @@
 </style>
 
 </head>
-
 <body>
 
-	<div id="wrap">
+<div id="wrap">
 		<header>
 			<h2></h2>
 		</header>
@@ -129,12 +87,10 @@
 			 	<input type="text" id="department_id" name="dept_id">
 			 	<input type="button" value="확인" id="dept_res">
   			</div>
-			
-			
 		
 		</article>
 	
 	</div>
-
+	
 </body>
 </html>

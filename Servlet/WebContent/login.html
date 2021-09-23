@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$("#submit_btn").on("click",function(){
+			console.log("click(1)");
+			
+			let id = $("#id").val();
+			let pw = $("#pw").val();
+			
+			data_scope = {id,pw};
+			
+			$.ajax({
+				url : "LoginServlet",
+				data : data_scope,
+				method:"POST"
+			})
+			.done(function(data){	
+				
+				let check = true;
+					
+				if(data == "0"){
+					alert("안녕하세요 adamin님?");
+					location.href="Employee.html";
+				}else{
+					$("#not_vaild").text("아이디 혹은 비밀번호가 틀렸습니다.");
+				}
+			
+			});
+		});
+		
+	})
+
+</script>
+</head>
+<body>
+
+<div class="login">
+
+	<form>
+		
+		<label for="id">ID</label>
+		<input type="text" id="id" name="id">
+		<span id="not_vaild"></span>
+		<label for="id">PW</label>
+		<input type="password" id="pw" name="pw">
+		
+		<input type="button" id="submit_btn" value="Login">
+	</form>
+	
+</div>
+
+</body>
+</html>

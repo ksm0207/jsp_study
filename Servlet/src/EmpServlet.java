@@ -1,10 +1,9 @@
-package pm;
 
-import java.util.List;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
-import java.sql.SQLFeatureNotSupportedException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,19 +19,18 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import vo.EmpVO;
 
 /**
- * Servlet implementation class EmpAll
+ * Servlet implementation class EmpServlet
  */
-
-@WebServlet("/EmpAll")
-public class EmpAll extends HttpServlet {
+@WebServlet("/EmpServlet")
+public class EmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	SqlSessionFactory factory;
        
-	
-	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmpAll() {
+    public EmpServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,28 +39,27 @@ public class EmpAll extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Script »£√‚");
 		
-		SqlSessionFactory factory = null;
+		response.setContentType("text/html; charset=UTF-8");
+		
 		try {
 			
 			Reader reader = Resources.getResourceAsReader("config/config.xml");
+			
 			factory = new SqlSessionFactoryBuilder().build(reader);
-			reader.close();	
+			
+			reader.close();
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
-		PrintWriter out = response.getWriter();
+		SqlSession session = factory.openSession();
 		
-		SqlSession sql = factory.openSession();
-		
-		List<EmpVO> evo_list = sql.selectList("emp.all");
+		List<EmpVO> list = session.selectList("emp.all");
 		
 		StringBuffer sb = new StringBuffer();
-		
-		for (EmpVO evo : evo_list ) {
+		for (EmpVO evo : list ) {
 			sb.append("<tr>");
 			
 			sb.append("<td>");
@@ -85,11 +82,13 @@ public class EmpAll extends HttpServlet {
 			
 			sb.append("</tr>");
 		}
+		
+		PrintWriter out = response.getWriter();
+		
 		out.print(sb.toString());
 		out.close();
-		sql.close();
-		
-		
+		session.close();
+	
 	}
 
 	/**
