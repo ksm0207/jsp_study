@@ -51,8 +51,9 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px">
-				<form method="POST" action="LoginAction.jsp">
-					<h3 style="text-align: center;">Login</h3>
+				<form method="POST" action="JoinAction.jsp">
+					<h3 style="text-align: center;">Join</h3>
+					
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="ID"
 						 name="user_id" maxlength="20">
@@ -62,7 +63,32 @@
 						<input type="password" class="form-control" placeholder="PassWord"
 						 name="user_pw" maxlength="20">
 					</div>
-					<input type="submit" class="btn btn-primary form-control" value="Login">
+					
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="name"
+						 name="user_name" maxlength="20">
+					</div>
+					
+					<div class="form-group" style="text-align: center;">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary active">
+								<input type="radio" name="user_gender"
+						 			   autocomplete="off"  value="남자" checked>Man 
+							</label>
+							
+							<label class="btn btn-primary active">
+								<input type="radio" name="user_gender"
+						 			   autocomplete="off"  value="여자" checked>Girl
+							</label>
+						</div>	
+					</div>
+				
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="abc@gmail.com"
+						 name="user_email" maxlength="20">
+					</div>
+					
+					<input type="submit" class="btn btn-primary form-control" value="Sing Up">
 				</form>
 			</div>
 		</div>
