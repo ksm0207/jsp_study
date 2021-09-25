@@ -17,5 +17,10 @@
 	
 </select>
 
+<insert id="add" parameterType="java.util.Map">
+	INSERT INTO TESTUSER(userID,userPassword,userName,userGender,userEmail)
+	VALUES(#{userID},#{userPassword},#{userName},#{userGender},#{userEmail})
+</insert>
+
 </mapper> 
   

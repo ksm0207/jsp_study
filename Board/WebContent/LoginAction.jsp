@@ -22,14 +22,12 @@
 	map.put("userID",user_id);
 	map.put("userPassword",user_pw);
 	
-	System.out.println(map);
-	
 	// mapper 호출하기 위한 SqlSession 객체 생성
 	SqlSession sql = Service.getFactory().openSession();
 	
 	// login mapper를 호출하기 -> login 쿼리 참조.
 	TestUserVO tvo = sql.selectOne("user.login",map);
-	System.out.println(tvo);
+	
 	
 	
 	if(tvo != null){
