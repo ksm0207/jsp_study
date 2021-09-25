@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+<select id="all" resultType="vo.TestUserVO">
+	select * from TESTUSER
+</select>	
+	
+	
+<select id="login" resultType="vo.TestUserVO" parameterType="java.util.Map">
+	
+	select * from TESTUSER
+	WHERE userID = #{userID} AND userPassword = #{userPassword}
+	
+</select>
+
+</mapper> 
+  

@@ -59,7 +59,7 @@
 					</div>
 					
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Insert PW"
+						<input type="password" class="form-control" placeholder="Insert PW"
 						 name="user_pw" maxlength="20">
 					</div>
 					<input type="submit" class="btn btn-primary form-control" value="Login">
