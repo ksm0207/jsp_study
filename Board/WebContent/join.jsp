@@ -85,7 +85,7 @@
 				
 					<div class="form-group">
 						<input type="email" class="form-control" placeholder="abc@gmail.com"
-						 name="user_email" maxlength="20">
+						 name="user_email" maxlength="50">
 					</div>
 					
 					<input type="submit" class="btn btn-primary form-control" value="Sing Up">
