@@ -43,30 +43,35 @@
 		print_out.println("<script>alert('입력칸에 비어있는 항목이 있습니다.') </script>");
 		print_out.println("<script>history.back()</script>");
 		
-	}else{
-		
-		// DB 조회 .
-		
-		
 	}
 	
-	/*
-	int status = sql.insert("user.add",map);
+	tvo = sql.selectOne("user.check",map);
 	
-	
-	if (status > 0) {
-		print_out.print("<script>alert('회원가입이 완료되었습니다.')</script>");
-		print_out.print("<script>location.href='login.jsp'</script>");
-		sql.commit();
+	boolean flag = false;
+	if(tvo != null){
+		
+		flag = true;
+		print_out.print("<script>alert('이미 존재하는 아이디 입니다.')</script>");
+		print_out.println("<script>history.back()</script>");
 	}
-	*/
-	
-	
-	
-	
-	
-	
-	
+	if(!flag){
+		int status = sql.insert("user.add",map);
 
+		if (status == 1) {
+			print_out.print("<script>alert('회원가입이 완료되었습니다.')</script>");
+			print_out.print("<script>location.href='login.jsp'</script>");
+			sql.commit();
+			
+		}
+			
+	}
+	
+	
+	
+	
+	
+	
+			
+	
 	
 %>

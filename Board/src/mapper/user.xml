@@ -17,9 +17,10 @@
 	
 </select>
 
-<select id="checkID">
+<select id="check" resultType="vo.TestUserVO" parameterType="java.util.Map">
 
-select * from TESTUSER
+select userID 
+from TESTUSER
 WHERE userID = #{userID}
 
 </select>
