@@ -1,3 +1,4 @@
+<%@page import="vo.TestUserVO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="service.Service"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
@@ -29,16 +30,42 @@
 	map.put("userEmail", userEmail);
 	
 	SqlSession sql = Service.getFactory().openSession();
+	TestUserVO tvo = new TestUserVO();
 	
 	
+	if(map.put("userID",userID).isEmpty() ||
+	   map.put("userPassword", userPassword).isEmpty()||
+	   map.put("userName", userName).isEmpty() ||
+	   map.put("userGender", userGender).isEmpty()||
+	   map.put("userEmail", userEmail).isEmpty()){
+		
+		
+		print_out.println("<script>alert('입력칸에 비어있는 항목이 있습니다.') </script>");
+		print_out.println("<script>history.back()</script>");
+		
+	}else{
+		
+		// DB 조회 .
+		
+		
+	}
+	
+	/*
 	int status = sql.insert("user.add",map);
+	
 	
 	if (status > 0) {
 		print_out.print("<script>alert('회원가입이 완료되었습니다.')</script>");
 		print_out.print("<script>location.href='login.jsp'</script>");
 		sql.commit();
-		
 	}
+	*/
+	
+	
+	
+	
+	
+	
 	
 
 	
