@@ -29,15 +29,14 @@
 	TestUserVO tvo = sql.selectOne("user.login",map);
 	
 	
-	
-	
-	if(tvo != null){
-		
+	if(tvo != null){	
 		session.setAttribute("tvo", tvo);
 		response.sendRedirect("main.jsp");
-		
+	
 	}else{
 		print_out.print("<script>alert('아이디 혹은 비밀번호가 틀립니다.')</script>");
 		print_out.print("<script>history.back()</script>");
 	}
+	
+	
 %>    

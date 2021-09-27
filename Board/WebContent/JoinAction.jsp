@@ -58,6 +58,7 @@
 		int status = sql.insert("user.add",map);
 
 		if (status == 1) {
+
 			print_out.print("<script>alert('회원가입이 완료되었습니다.')</script>");
 			print_out.print("<script>location.href='login.jsp'</script>");
 			sql.commit();
@@ -65,13 +66,5 @@
 		}
 			
 	}
-	
-	
-	
-	
-	
-	
-			
-	
 	
 %>
