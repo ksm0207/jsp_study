@@ -7,7 +7,7 @@
 	request.setCharacterEncoding("UTF-8");
 	response.setContentType("text/html; charset=UTF-8");
 	
-	String id = request.getParameter("u_id");
+	String id = request.getParameter("id");
 	
 	
 	if(MemDAO.checkID(id)){

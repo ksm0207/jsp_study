@@ -153,7 +153,7 @@
 					$.ajax({
 						url : "checkId.jsp",
 						type :	"POST",
-						data : "u_id=" + encodeURIComponent(id.trim()),
+						data : "id=" + encodeURIComponent(id.trim()),
 						
 					})
 					.done(function(result){
