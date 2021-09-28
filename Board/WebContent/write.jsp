@@ -89,34 +89,35 @@
 		<div class="row">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				
-				<!-- 게시판의 제목부분 (테이블의 제목부분) -->
-				<thead>
-					<tr> <!-- tr : 테이블의 하나의 '행'을 의미함 -->
-						 <!-- th : 행 속에 속성들 -->
-						<th style="background-color: #eeeeee; text-align: center">번호</th> 
-						<th style="background-color: #eeeeee; text-align: center">제목</th> 
-						<th style="background-color: #eeeeee; text-align: center">작성자</th> 
-						<th style="background-color: #eeeeee; text-align: center">작성일</th> 						
-					</tr>
-				</thead>
-				
-				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</tbody>	
-			</table>
-			<a href="#" class="btn btn-primary pull-right">글쓰기</a>
+				<form method="POST" action="writeAction.jsp">
+							<!-- 게시판의 제목부분 (테이블의 제목부분) -->
+					<thead>
+						<tr> <!-- tr : 테이블의 하나의 '행'을 의미함 -->
+							 <!-- th : 행 속에 속성들 -->
+							<th colspan="2" style="background-color: #eeeeee; text-align: center">게시판 글쓰기</th>					
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control" placeholder="제목" name="title"
+							     style="text-align: center;">
+								<input type="hidden" name="available">
+								<input type="hidden" name=<%=tvo.getUserID()%>>
+							</td>
+						</tr>
+						
+						<tr>
+							<td><textarea type="text" class="form-control" placeholder="" name="content"
+							     style="text-align: center; height: 350px;"></textarea></td>
+						</tr>
+					</tbody>	
+				</table>
+					<input type="submit" class="btn btn-primary pull-right" value="글쓰기"/>
+				</form>
 		</div>
-	
 	</div>
 	
-	
-	
-
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 

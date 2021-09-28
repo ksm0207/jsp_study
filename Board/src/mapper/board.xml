@@ -6,4 +6,11 @@
 
 <mapper namespace="board">
 
+<insert id="add" parameterType="java.util.Map">
+
+INSERT INTO TESTBOARD(idx,title,userid,datetime,content,available)
+VALUES(board_seq.nextval,#{title},#{userid},sysdate,#{content},#{available})
+
+</insert>
+
 </mapper>
