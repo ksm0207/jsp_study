@@ -173,7 +173,61 @@
 			});
 		});
 		
+		// 아이디 중복체크
+		function reg() {
+			// 아이디가 chk를 가지는 요소의 class 값을 얻어내기
+			// checkid.jsp를 참고하자
+			
+			// 제이쿼리 문법
+			let chk = $("#chk").hasClass("success");
+			
+			// 자바스크립트 문법
+			// let chk = document.getElementById("chk").className;
+			
+			if(!chk) { // 다른방법 : if(chk != 'success')
+				alert('아이디 체크를 먼저 진행해주세요.');
+				return false;
+			}
+			
+			// 나머지 유효성 검사
+			
+			let id = $("#s_id").val();
+			let pw = $("#s_pw").val();
+			let name = $("#s_name").val();
+			let email = $("#s_email").val();
+			
+			if (id.trim().length < 1){
+				alert('아이디를 입력해주세요.');
+				$("#s_id").focus();
+				return false;
+			}
+			
+			if (pw.trim().length < 1){
+				alert('비밀번호를 입력해주세요.');
+				$("#s_pw").focus();
+				return false;
+			}
+			
+			if (name.trim().length < 1){
+				alert('이름을 입력해주세요.');
+				$("#s_name").focus();
+				return false;
+			}
+			
+			if (email.trim().length < 1){
+				alert('이메일 입력해주세요.');
+				$("#s_email").focus();
+				return false;
+			}
+			
+			// 유효성 검사가 모두 끝나고나면 회원가입 시키기 -> 서버로 이동
+			document.forms[0].submit();
+		
+		}
+		
 	</script>
+	
+	
 	
 </body>
 </html>

@@ -1,9 +1,80 @@
-<!doctype html>
+<%@page import="mybatis.vo.MemVO"%>
+<%@ page import ="java.io.File" %>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!
+	// <%! 자바 멤버 정의
+	
+	// 사용자 용량을 측정하는 메소드를 구현하기.
+	// File 객체를 이용하되 용량을 얻어준다.
+	// ※ 폴더는 용량을 구하지 못하고 안에 있는 파일들의 용량을 모두 더해주기 위해
+	//   재귀호출 방식을 사용하자.
+	public int useSize(File file){
+		
+		// 1.폴더의 하위요소들의 File용량을 모두 더해주기 전 하위 요소들을 모두 얻어내자.
+		File[] list = file.listFiles();
+		
+		// 2. 파일의 용량을 적재할 변수를 선언 ※ 폴더 일 경우엔 useSize 함수를 다시 호출한다
+		int size = 0;
+		
+		for(File sf : list) {
+			
+			// 파일이 존재하는경우
+			if(sf.isFile()){
+				// 용량을 적재한다
+				size += sf.length(); 
+			}else{
+				// 존재하지 않는다면 재귀호출 하기
+				size += useSize(sf);
+			}
+		}
+		
+		return size;
+	}
+%>
+
+<%
+	// 총 용량이 10mb 일때 어떻게 계산할까 ?
+	// 1. 1024byte -> 1KB
+	// 2. 1024 * 1024 = 1MB
+	// (1MB + 10 = 10MB)
+	
+	// 3. 1024 * 1024 * 1024 = 1GB
+	int totalSize = 1024 * 1024 * 10 ; // 10MB
+	int useSize = 0;
+	
+	// 현재 페이지는 무조건 로그인이 되어 있어야 사용 가능한 페이지 이므로
+	// 로그인 여부를 확인해주자.
+	
+	Object obj = session.getAttribute("mvo");
+
+	if(obj != null) {
+		MemVO mvo = (MemVO)obj;
+		
+		// 현재 사용자가 보고자 하는 현재 위치값을 파라미터를 받는다
+		String dir = request.getParameter("cPath");
+		
+		// cPath : myDisk 버튼을 클릭하고 들어온 경우에는 dir에 null 값을 받음
+		if(dir == null){
+			// 현재 위치 값을 받지 못한 경우는 해당 id로 지정해준다.
+			dir = mvo.getM_id();
+			
+		}else{
+			
+		}
+%>
+ 
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+
+	.m_id {
+		color: #00f;
+		font-weight: bold;
+	}
 	table{
 		width: 600px;
 		border: 1px solid #27a;
@@ -73,8 +144,8 @@
 </head>
 <body>
 	<h1>My Disk service</h1>
-	<hr/>
-	(<span class="m_id"></span>)님의 디스크
+	<hr/><%=mvo.getM_name() %>
+	(<span class="m_id"><%=mvo.getM_id()%></span>)님의 디스크
 	&nbsp;[<a href="javascript:home()">Home</a>]
 	<hr/>
 	
@@ -82,15 +153,15 @@
 		<tbody>
 			<tr>
 				<th class="title">전체용량</th>
-				<td>KB</td>
+				<td><%=totalSize / 1024 %>KB</td>
 			</tr>
 			<tr>
 				<th class="title">사용량</th>
-				<td>KB</td>
+				<td><%=useSize / 1024 %>KB</td>
 			</tr>
 			<tr>
 				<th class="title">남은용량</th>
-				<td>KB</td>
+				<td><%=(totalSize-useSize)/1024%>KB</td>
 			</tr>
 		</tbody>
 	</table>
@@ -116,7 +187,7 @@
 	<hr/>
 	
 	<label for="dir">현재위치:</label>
-	<span id="dir"></span>
+	<span id="dir"><%=dir%></span>
 	
 	<table summary="폴더의 내용을 표현하는 테이블">
 		<colgroup>
@@ -132,7 +203,11 @@
 			</tr>
 		</thead>
 		<tbody>
-		
+		<%
+			if(!dir.equals(mvo.getM_id())){
+			// 현재 위치값과 아이디가 다를때의 경우		
+			
+		%>
 			<tr>
 				<td>↑</td>
 				<td colspan="2">
@@ -142,29 +217,59 @@
 				</td>
 				
 			</tr>
-
+		<%
+			}
+		// 현재 위치 값(dir)을 가지고 절대경로로 만들어주기
+		// 생성이유 : File객체를 생성하여 '하위'에 있는 파일 혹은 디렉토리를
+		//          얻어주기 위해서 만들어준다.
+		String realPath = application.getRealPath("/members/"+dir);
+		
+		File s_file = new File(realPath);
+		File[] sub_list = s_file.listFiles();
+		
+		for(File f : sub_list){
+		
+		%>
+		<!-- 표현해야하는 곳 -->
+		
 			<tr>
 				<td>
+				<%
+					if(f.isFile()){
+				%>
 
 						<img src="../images/file.png"/>
-
+				<%
+					}else{
+				%>
 						<img src="../images/folder.png"/>
-
+				<%
+					}
+				%>
 				</td>
 				<td>
-
-					<a href="javascript: gogo('')">
-						
-					</a>
-
-					<a href="javascript:down('')">
-						
-					</a>
+				<%
+					if(f.isDirectory()){
+				%>
+					<!-- gogo : 폴더이동 -->
+					<a href="javascript: gogo('')"><%=f.getName()%></a>
+				<%	}else{
 				
+				%>
+					<!-- down : 파일 다운로드 -->
+					<a href="javascript:down('')">
+					<%=f.getName() %>
+					</a>
+				<%
+				} 
+				
+				%>
 				</td>
 				<td></td>
 			</tr>
-
+	<%
+		}
+	%>
 		</tbody>
 	</table>
 	
@@ -214,8 +319,24 @@
 		</form>
 	</div>
 	
+	<script>
+		function home(){
+			
+		}
+	</script>
+
 	
 </body>
 </html>
+<% 
+	}else{
+		
+%>
+	<script>
+		alert('로그인 후 사용하세요 !');
+		parent.location.href='../index.jsp';
+	</script>
+<%
 
-
+	}
+%>

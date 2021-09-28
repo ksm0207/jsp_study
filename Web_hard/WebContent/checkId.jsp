@@ -13,11 +13,11 @@
 	if(MemDAO.checkID(id)){
 		
 %>
-	<pre class="success">사용가능</pre>
+	<pre id="chk" class="success">사용가능</pre>
 <%
 	}else{
 %>
-	<pre class="fail">사용불가</pre>
+	<pre id="chk" class="fail">사용불가</pre>
 <%
 	
 	}

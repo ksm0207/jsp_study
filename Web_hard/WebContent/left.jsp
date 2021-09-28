@@ -1,3 +1,4 @@
+<%@page import="mybatis.vo.MemVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -55,9 +56,11 @@
 	<!-- if 영역 -->
 	
 	<%
-		Object obj = session.getAttribute("mvo");
+		session = request.getSession();
+		MemVO mvo = (MemVO) session.getAttribute("mvo");
+		// Object obj = session.getAttribute("mvo");
 	
-		if(obj == null){
+		if(mvo == null){
 	%>
 	<div id="log_fail" class="">
 		
@@ -106,7 +109,7 @@
 	<!-- else 영역 -->
 	<div id="log_suc" class="">
 		
-		<p>(마루치)님 환영</p>
+		<p><%=mvo.getM_name() +" 님 안녕하세요 ?"%> </p>
 		<p class="btn">
 			<a href="logout.jsp">로그아웃</a>
 		</p>
@@ -126,11 +129,39 @@
 	</form>
 	
 	<!-- Script -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 	
 		// 회원가입 창 열기 function
 		function reg() {
 			parent.right.location.href ='reg.jsp';
+		}
+		
+		function exe(){
+			
+			// 유효성 검사
+			
+			let id = document.getElementById("s_id").value;
+			let pw = document.getElementById("s_pw").value;
+			
+			if(id.trim().length < 1){
+				alert('아이디를 입력해주세요.');
+				return false;
+			}
+			
+			if(pw.trim().length < 1){
+				alert('비밀번호를 입력해주세요.');
+				return false;
+			}
+			
+			// 현재문서에서 첫번째 폼의 action 변경 후 데이터 전송
+			document.forms[0].action = 'login.jsp';
+			document.forms[0].submit();
+			
+		}
+		
+		function myDisk(){
+			parent.location.href = 'disk/myDisk.jsp';
 		}
 		
 	</script>
