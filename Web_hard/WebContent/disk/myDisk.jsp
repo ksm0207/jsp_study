@@ -54,13 +54,19 @@
 		// 현재 사용자가 보고자 하는 현재 위치값을 파라미터를 받는다
 		String dir = request.getParameter("cPath");
 		
+		// 09-29 : 사용자가 폴더를 선택했을 경우 f_name 파라미터로 받아주기.
+		String f_name = request.getParameter("f_name");
+		
 		// cPath : myDisk 버튼을 클릭하고 들어온 경우에는 dir에 null 값을 받음
 		if(dir == null){
 			// 현재 위치 값을 받지 못한 경우는 해당 id로 지정해준다.
 			dir = mvo.getM_id();
-			
 		}else{
 			
+			// 원하는 폴더를 선택 할 경우 수행하는 곳.
+			if(f_name != null && f_name.trim().length() > 0){
+				dir = dir+"/"+f_name;
+			}
 		}
 %>
  
@@ -68,6 +74,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 
@@ -252,7 +259,7 @@
 					if(f.isDirectory()){
 				%>
 					<!-- gogo : 폴더이동 -->
-					<a href="javascript: gogo('')"><%=f.getName()%></a>
+					<a href="javascript: gogo('<%=f.getName()%>')"><%=f.getName()%></a>
 				<%	}else{
 				
 				%>
@@ -275,13 +282,13 @@
 	
 	<form name="ff" method="post">
 		<input type="hidden" name="f_name"/>
-		<input type="hidden" name="cPath" value=""/>
+		<input type="hidden" name="cPath" value="<%=dir%>"/>
 	</form>
 	
 	
 	<div id="f_win">
 		<form action="makeFolder.jsp" method="post" name="frm">
-			<input type="hidden" name="cPath" value=""/>
+			<input type="hidden" name="cPath" value="<%=dir%>"/>
 			<label for="f_name">폴더명:</label>
 			<input type="text" id="f_name" name="f_name"/><br/>
 			<p class="btn">
@@ -320,9 +327,53 @@
 	</div>
 	
 	<script>
-		function home(){
+	
+		// 현재문서에 이름이 ff인 form 객체를 검색한다
+		// 검색된 form객체안에 이름이 fname 요소의 값으로
+		// 인자로 받은 폴더명을 넣어준다
+		function gogo(fname){
+			
+			document.ff.f_name.value = fname;
+			
+			// 현재 문서에 이름인 ff인 form의 서버 경로를 myDisk.jsp로 설정하기.
+			document.ff.action = 'myDisk.jsp';
+			document.ff.submit();
 			
 		}
+		
+		// div 아이디가 f_win 요소를 보여주자. css -> display : none 처리되어있음.
+		function makeFolder(){
+			document.getElementById('f_win').style.display = 'block';
+			
+			
+			
+		}
+		function newFolder() {
+			// cPath
+			let cPath = document.getElementsByName("name");
+			let f_name = document.getElementById("f_name");
+			
+			
+			f_name = document.frm.f_name.value;
+			cPath = document.frm.name.value;
+			
+			console.log('CPath : '+cPath);
+			
+			if(f_name.trim().length < 1){
+				console.log(f_name);
+				alert('생성하고자 하는 폴더명을 입력해주세요.');
+				return false;	
+			}
+		
+			document.frm.submit();
+		}
+		
+		function closeWin(){
+			document.getElementById('f_win').style.display = 'none';
+			
+		}
+	
+		
 	</script>
 
 	
