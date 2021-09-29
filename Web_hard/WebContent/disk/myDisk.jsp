@@ -68,6 +68,12 @@
 				dir = dir+"/"+f_name;
 			}
 		}
+		
+		// 사용자가 파일올리기를 할 때 현재 위치값을 upload.jsp 서버에 전달해야함!
+		// 서버에서는 getParameter() 으로 받기에는 시간적제한이 있으므로..
+		// '파라미터가 전달되기 전에' 전달이 가능하도록 만드는 방법은
+		// 세션을 이용하여 전달하자.
+		session.setAttribute("dir", dir);
 %>
  
 <!DOCTYPE html>
@@ -218,7 +224,7 @@
 			<tr>
 				<td>↑</td>
 				<td colspan="2">
-					<a href="javascript:goUp('')">
+					<a href="javascript:goUp('<%=dir%>')">
 						상위로...
 					</a>
 				</td>
@@ -264,7 +270,7 @@
 				
 				%>
 					<!-- down : 파일 다운로드 -->
-					<a href="javascript:down('')">
+					<a href="javascript:down('<%=f.getName()%>')">
 					<%=f.getName() %>
 					</a>
 				<%
@@ -306,9 +312,11 @@
 	
 
 	<div id="f_win2">
+	<!--  -->
 		<form action="upload.jsp" method="post" name="frm2"
 		enctype="multipart/form-data">
-		
+			<!-- type : hidden 서버에서 받지를 못함. 받긴하지만 null 값뜸. -->
+			<!--<input type="hidden" name="cPath" value="<%=dir%>"> -->
 			<label for="selectFile">첨부파일:</label>
 			<input type="file" id="selectFile" 
 				name="upload"/><br/>
@@ -370,6 +378,61 @@
 		
 		function closeWin(){
 			document.getElementById('f_win').style.display = 'none';
+			
+		}
+		
+		// 파일 업로드 구현 시작
+		
+		// ※ 업로드 화면보이기
+		function selectFile(){
+			let f_win2 = document.getElementById('f_win2').style.display ='block';
+		}
+		// ※ 업로드 화면숨기기
+		function closeWin2(){
+			document.getElementById('f_win2').style.display = 'none';
+		}
+		
+		function upload(){
+			
+			// 첨부한 파일 객체 가져오기
+			let select_file = document.frm2.upload.value;
+			
+			if(select_file.trim().length < 1){
+				alert('파일을 선택해주세요.');
+				return false;
+			}
+			
+			document.frm2.submit();
+		}
+		
+		// 파일 다운로드 구현
+		
+		function down(file) {
+			console.log(file);
+			document.ff.f_name.value = file;
+			document.ff.action = 'download.jsp';
+			document.ff.submit();		
+		}
+		
+		function goUp(top){
+			
+			let path =  top;
+			console.log('Path : '+path);
+			
+			let res = path.substring(0, path.lastIndexOf('/'));
+			// 현재 문서에 이름인 ff인 form의 서버 경로를 myDisk.jsp로 설정하기.
+			console.log('SubString : '+res);
+			
+			if(path.length > res.length){
+				location.href='myDisk.jsp';
+				console.log("0");
+				return res;
+			}else{
+				console.log("1");
+				return res;
+			}
+		
+			
 			
 		}
 	
