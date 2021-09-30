@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+ul#menu{
+	width: 982px;
+	height: 38px; 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+}
+ul#menu>li{
+	/* 인라인 요소를 가지면서 크기 지정이 필요할 때
+		display: inline-block;
+	*/
+	/* float : 공중으로 띄우고 왼쪽중심(기준점)으로 배치를 시키는방법*/
+	float: left;
+}
+/* li태그 안에 존재하는 <a>태그'마다' 이미지인 apple_menu.gif를
+      배경으로 지정한다 하지만 <a>태그는 인라인요소를 가지고 있기때문에
+      크기조정을 못하므로 크기조정이 가능한 블록요소로 변경해주자  
+      너비 : 136px 높이 38px 로 잡아주고 글씨는 안보이도록 하기     
+*/
+ul#menu>li>a{
+ 	display:block;
+	width: 134.5px;
+	height: 35px;
+	text-indent: -1000px;
+	overflow: hidden;
+	
+}
+
+
+ul#menu>li#apple>a{
+	background-position: 0px 0px;	
+}
+
+ul#menu>li#store>a{
+	background-position: -134.5px 0px;	
+}
+ul#menu>li#mac>a{
+	background-position: -269px 0px;	
+}
+ul#menu>li#ipod>a{
+	background-position: -403.5px 0px;	
+}
+ul#menu>li#download>a{
+	background-position: -538px 0px;	
+}
+
+ul#menu>li#support>a{
+	background-position: -672.5px 0px;	
+}
+
+/* 마우스를 올렸을 때 */
+ul#menu>li#apple>a:hover {
+	background-position: 0 -38px;
+}
+
+ul#menu>li#store>a:hover {
+	background-position: -134.5px -38px;
+}
+
+ul#menu>li#mac>a:hover {
+	background-position: -269px -38px;
+}
+
+ul#menu>li#ipod>a:hover {
+	background-position: -403px -38px;
+}
+
+ul#menu>li#download>a:hover {
+	background-position: -538px -38px;
+}
+ul#menu>li#support>a:hover {
+	background-position: -672.5px -38px;
+}
+
+	
