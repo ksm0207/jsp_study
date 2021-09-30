@@ -21,14 +21,15 @@
 		if(name == null || year == null || age == null){
 			// 하나라도 밤지 못한 경우 폼을 보여줌
 	%>
-		<form action = "forward.jsp" method="post">
+		<form action = "forward.jsp" method="post" name="first_form">
 			<label for="name">이름:</label>
 			<input type="text" id="name" name="name"><br>
 			
 			<label for="year">생년:</label>
 			<input type="text" id="year" name="year" placeholder="2000"><br>
+			<a href=javascript:test()>보내기</a>
 			
-			<input type="submit" value="보내기">
+			
 		</form>
 		
 	<%
@@ -41,6 +42,20 @@
 	<%
 		}
 	%>
+	<script>
+		function test() {
+			let year = document.getElementById('year').value;
+			
+			if(year.trim().length < 1){
+				alert('생년월일을 입력해주세요.');
+				document.getElementById('year').focus();
+				return false;
+			}
+			document.forms[0].action ='forward.jsp';
+			document.forms[0].submit();
+		}
+		
+	</script>
 
 </body>
 </html>
