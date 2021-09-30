@@ -220,11 +220,20 @@
 			if(!dir.equals(mvo.getM_id())){
 			// 현재 위치값과 아이디가 다를때의 경우		
 			
+			// 상위로... 기능구현
+			// 예시 : 현재위치 값이 admin/abc/1234 이라고 가정했을때
+			//       상위로의 기능은 admin/abc 위치해야한다.
+			//       현재위치 값 에서 가장 뒤에있는 /의 index를 얻어내준다음
+			//       맨 앞에서 가져온 index까지만 substring 메소드를 사용해준다.
+			
+			int idx = dir.lastIndexOf("/");
+			String upPath = dir.substring(0,idx);
+			
 		%>
 			<tr>
 				<td>↑</td>
 				<td colspan="2">
-					<a href="javascript:goUp('<%=dir%>')">
+					<a href="javascript:goUp('<%=upPath%>')">
 						상위로...
 					</a>
 				</td>
@@ -416,11 +425,12 @@
 		
 		function goUp(top){
 			
+			/*
+			
 			let path =  top;
 			console.log('Path : '+path);
-			
+
 			let res = path.substring(0, path.lastIndexOf('/'));
-			// 현재 문서에 이름인 ff인 form의 서버 경로를 myDisk.jsp로 설정하기.
 			console.log('SubString : '+res);
 			
 			if(path.length > res.length){
@@ -431,9 +441,16 @@
 				console.log("1");
 				return res;
 			}
+			*/
+			
+			document.ff.cPath.value = top;
+			document.ff.action = "myDisk.jsp";
+			document.ff.submit();
+		}
 		
+		function home(){
 			
-			
+			location.href='../index.jsp';
 		}
 	
 		
