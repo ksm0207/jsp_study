@@ -7,9 +7,6 @@
 	String p_num = request.getParameter("p_num");
 	String count = request.getParameter("count");
 	
-	System.out.println("changeCount.jsp || p_num = "+p_num);
-	System.out.println("changeCount.jsp || count = "+count);
-	
 	int q = Integer.parseInt(count);
 	
 	cart.changeCount(p_num, q);

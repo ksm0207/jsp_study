@@ -7,4 +7,4 @@
 	
 	cart.addProduct(shop, pnum);
 	response.sendRedirect("product_content.jsp?prod_num="+pnum);
-%>   
+%>

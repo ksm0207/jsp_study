@@ -54,7 +54,7 @@
 		</thead>
 		
 		<tbody>
-		
+			
 			<%
 				if(p_list != null){
 					for(ProductVO pvo : p_list){		
@@ -80,6 +80,13 @@
 		
 		</tbody>
 	</table>
+		<div style="display: block; text-align: center; line-height: 50px;
+		 border: 1px solid teal; border-radius: 5px; position:relative;
+		 top:25px;
+		 font-size: 15px; font-weight: bold; color: white; width: 380px;
+		 margin: auto;">
+			<span><a href="registration.jsp">제품등록</a></span>
+		</div>
 
 </body>
 </html>
