@@ -39,6 +39,7 @@ public class Cart {
 	public Cart() {
 		
 		list = new ArrayList<ProductVO>();
+	
 	}
 	
 	// 카트에서 특정 제품을 검색하는 기능
@@ -99,6 +100,10 @@ public class Cart {
 		// 현재 인자로 넘어온 선택된 제품의 번호가
 		// 이미 카트에 저장된 제품일 수도 있기 때문에
 		// 먼저 카트에서 검색을 해준다.
+		
+		System.out.println("addProduct");
+		System.out.println(sb);
+		System.out.println(num);
 
 		ProductVO vo = searchProduct(num);
 		

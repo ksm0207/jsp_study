@@ -1,10 +1,6 @@
 <%@page import="mybatis.vo.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-	request.setCharacterEncoding("UTF-8");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,20 +9,16 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-		<jsp:include page="menu.jsp"></jsp:include>
-		<jsp:useBean id="shop_bean" class="shop.bean.ShopBean" scope="session"/>
-		<jsp:setProperty property="p_num" name="shop_bean" param="prod_num"/>
-		
-		<%
-			ProductVO pvo = shop_bean.getProduct();
-		
-		%>
-		
-		
+	<jsp:include page="menu.jsp"/>
 	
-	<table align="center" width="600" border ="1" style="border-collapse:collapse;
-	       font-size:11px bordercolor="navy" cellpadding="4" cellspacing="0">
+	<jsp:useBean id="shop" class="shop.bean.ShopBean" scope="session"/>
+	<jsp:setProperty property="p_num" name="shop" param="prod_num"/>
+	<%
+		ProductVO pvo = shop.getProduct();
+	%>
+	<table align="center" width="600" border="1"
+	style="border-collapse:collapse; font-size: 11px" bordercolor="navy"
+	cellpadding="4" cellspacing="0">
 		   	<colgroup>
 		   		<col width="40%">
 		   		<col width="60%">
@@ -50,13 +42,13 @@
 			    </tr>
 			    <tr>
 			        <td>제품가격</td>
-			        <td>(할인가 : <%=pvo.getP_saleprice() %>원 )</td>
+			        <td>(할인가 :  <%=pvo.getP_saleprice() %>원)</td>
 			    </tr>
 			    <tr>
 			        <td colspan="2">제품설명</td>
 			    </tr>
 			    <tr>
-			        <td colspan="2" align="center"><img src ="images/<%=pvo.getP_image_s()%>" width="100" height="95"></td>
+			        <td colspan="2" align="center"><img src ="images/<%=pvo.getP_image_l() %>" /></td>
 			    </tr>
 			    <tr>
 			        <td colspan="2"><%=pvo.getP_content() %></td>
@@ -64,13 +56,12 @@
 			    <tr>
 			        <td colspan="2" align="center">
 			            <input type="button" value="장바구니에 담기" 
-			            onclick="javascript:location.href='addProduct.jsp?p_num='"/>
+			            onclick="javascript:location.href='addProduct.jsp?p_num=<%=pvo.getP_num()%>'"/>
 			            <input type="button" value="장바구니 보기" 
 			            onclick="javascript:location.href='cartList.jsp'"/>
 			        </td>
 			    </tr> 
 		    </tbody>   
 		</table>
-
 </body>
 </html>

@@ -20,17 +20,17 @@
 
 <!-- userBean : 처음에는 값이 없음 -->
 
-<jsp:useBean id="shop_bean" class="shop.bean.ShopBean" scope="session"/>
+<jsp:useBean id="shop" class="shop.bean.ShopBean" scope="session"/>
 <!-- setProperty 값을 넣었을때 UseBean 에서는 다시 값이 생김 -->
 
-<jsp:setProperty property="category" name="shop_bean"/>
+<jsp:setProperty property="category" name="shop"/>
 
 <%
-	shop_bean.searchProduct(); // 사용자가 선택한 카테고리별 제품들이 검색되었음.
+	shop.searchProduct(); // 사용자가 선택한 카테고리별 제품들이 검색되었음.
 	                           // 쿼리결과를 호출함.
    	                           
 	
-    ProductVO[] p_list = shop_bean.getP_list();
+    ProductVO[] p_list = shop.getP_list();
 	System.out.println("ProductVO[] list = " + p_list);
 %>
 	<table align="center" width="600" border ="1" style="border-collapse:collapse;
