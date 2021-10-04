@@ -8,7 +8,7 @@
 <%
   	request.setCharacterEncoding("UTF-8");
 
-	String path = application.getRealPath("/upload");
+	String path = application.getRealPath("/images");
 
 	MultipartRequest req = new 
 			MultipartRequest(request,path,1024*1024*5,

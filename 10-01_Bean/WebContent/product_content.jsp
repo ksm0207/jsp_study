@@ -48,7 +48,7 @@
 			        <td colspan="2">제품설명</td>
 			    </tr>
 			    <tr>
-			        <td colspan="2" align="center"><img src ="images/<%=pvo.getP_image_l() %>" /></td>
+			        <td colspan="2" align="center"><img src ="images/<%=pvo.getP_image_s() %>" /></td>
 			    </tr>
 			    <tr>
 			        <td colspan="2"><%=pvo.getP_content() %></td>
