@@ -111,6 +111,7 @@ onclick="del('<%=pvo.getP_num()%>')">
 	    		let idx = row.rowIndex; // 해당 '행'의 번호
 	    		console.log(idx);
 	    		table.rowIdx = idx; // 테이블에 행 번호를 저장하기
+	    		
 	    	}
         
         	function del(p_num){
@@ -132,11 +133,29 @@ onclick="del('<%=pvo.getP_num()%>')">
         				
         				if(data.chk){
         					alert(data.chk);
-        					table.deleteRow(table.rowIdx);
         					
-        					// 해당 행의 다섯번째 td안에 있는 span에 있는 총액 구하기.
+        					let total = $("#total").text();
+        					let tbody = $("tr").children("td").eq(5).text();
         					
-        					// 아이디가 total 이라는 span 태그에 있는 총 결재액
+        					let idx = ("#table tbody td:nth-child")
+        				 
+        					console.log("Tbody : "+tbody);
+        					
+        					let split = total.split('원');
+        					
+        					let totalPrice =  parseInt(split[0]);
+        					console.log("TotalPrice == "+ totalPrice);
+        					let salePrice = tbody;
+        					console.log("SalePrice ==" + salePrice);
+        					
+        					let result = totalPrice - 1150 ;
+        					
+        					console.log(result);
+        					
+        					 $("#total").text(result);
+
+							// table.deleteRow(table.rowIdx);
+        					
         				}
         				
         			});

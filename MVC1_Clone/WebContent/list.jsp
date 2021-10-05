@@ -132,7 +132,7 @@
          	// 만약 파라미터 값이 없다면 nowPage의 값을 그대로 사용함.-> 첫번째 페이지를 보겠다는 뜻
          	
          	String cPage = request.getParameter("cPage");
-         	
+         	System.out.println(cPage);
          	if(cPage != null){
 	         	nowPage = Integer.parseInt(cPage);   
 	         	
@@ -159,7 +159,7 @@
          %>                         
             
 
-<li><a href="#">이전으로</a></li>
+<li><a href="list.jsp?cPage=<%=nowPage%>">이전으로</a></li>
 
 	<li class="now">1</li>
          
