@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bbs">
+
+	<resultMap id="map" type="mybatis.vo.BbsVO">
+	
+		<id property="b_idx" column="b_idx"/>
+		
+		<!-- '원글' 하나에 여러 개의 '댓글'이 존재할 수 있으므로 집합구조를 1:N으로 선언함 -->	
+		<collection property="cvo_list" ofType="mybatis.vo.CommentVO"
+		            select="comment_list" column="b_idx">
+		</collection>
+		
+	</resultMap>
+	
+		<!-- 해당원글(b_idx) 에 맞는  댓글을 가져오는 쿼리문 -->
+  	<select id="comment_list" parameterType="String"
+  	        resultType="mybatis.vo.CommentVO">
+  			
+  			SELECT
+  			*
+  			FROM comment_t
+  			WHERE b_idx = #{b_idx}
+  			
+  	</select>
+	
+	<!-- 원글을 가져오는 쿼리문 -->
+	<select id="bbs_list" resultMap="map" parameterType="java.util.Map">
+	
+		SELECT * FROM(
+			 SELECT rownum r_num, a.* FROM (SELECT * FROM bbs_t
+			WHERE status = 0
+			ORDER BY b_idx DESC
+			)a
+		) WHERE r_num BETWEEN #{begin} AND #{end}
+		
+	</select>
+  
+    <!-- 총 게시물 수를 반환하는 SELECT -->
+  	<select id="total_count" resultType="int">
+  		SELECT
+  		count(*)
+  		  		FROM bbs_t
+  		WHERE status = 0
+  	</select>
+  
+  
+  	
+</mapper>
