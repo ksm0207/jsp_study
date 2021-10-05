@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 		ProductVO[] vo = cart.getList();
 	%>
 	
-	<table width="600" border="1" align="center" 
+	<table id="table" width="600" border="1" align="center" 
         style="border-collapse:collapse;font-size:8pt" cellspacing="0" 
                cellpadding="4">
                <tr>
@@ -42,7 +43,8 @@
 				
 			
 	%>
-            <tr align="center">
+										   <!-- 마우스감지 이벤트 | 행을 지우기위한 이벤트  -->
+            <tr align="center" onmouseover="overRow(this)">
                 <td><%=pvo.getP_num() %></td>
                 <td><%=pvo.getP_name() %></td>
                 <td>
@@ -68,9 +70,16 @@
                 </td>
                 <td><%=pvo.getTotalPrice() %></td>
                 <td>
+                <%-- 
                     <input type="button" value="삭제" 
                     style="border:1 solid black;cursor:pointer" 
 onclick="javascript:location.href='delProduct.jsp?p_num=<%=pvo.getP_num()%>'">
+				--%>
+				
+				<input type="button" value="삭제" 
+                    style="border:1 solid black;cursor:pointer" 
+onclick="del('<%=pvo.getP_num()%>')">
+				
                 </td>
             </tr>
 	
@@ -89,11 +98,54 @@ onclick="javascript:location.href='delProduct.jsp?p_num=<%=pvo.getP_num()%>'">
 		}	
 %>    
             <tr>
-                <td colspan="5" align="right">총 결재액 : <%=total %>원 </td>
+                <td colspan="5" align="right">총 결재액 :<span id="total"><%=total %>원 </span></td>
                 <td></td>
             </tr>
     
         </table>
+        
+        <script>
+            const table = document.getElementById('table');
+	    	function overRow(row){
+	    		
+	    		let idx = row.rowIndex; // 해당 '행'의 번호
+	    		console.log(idx);
+	    		table.rowIdx = idx; // 테이블에 행 번호를 저장하기
+	    	}
+        
+        	function del(p_num){
+       			
+        		let check = confirm('삭제하시겠습니까?');
+        		
+        		if(check){
+        			const param = "p_num="+encodeURIComponent(p_num);
+        			console.log(param);
+        			
+        			$.ajax({
+        				
+        				url : "delProduct.jsp",
+        				data : param,
+        				type: "POST",
+        				dataType:"json",
+        			})
+        			.done(function(data){
+        				
+        				if(data.chk){
+        					alert(data.chk);
+        					table.deleteRow(table.rowIdx);
+        					
+        					// 해당 행의 다섯번째 td안에 있는 span에 있는 총액 구하기.
+        					
+        					// 아이디가 total 이라는 span 태그에 있는 총 결재액
+        				}
+        				
+        			});
+        		}
+        	}
+        	
+       		
+       
+       	</script>
 	
 
 </body>
