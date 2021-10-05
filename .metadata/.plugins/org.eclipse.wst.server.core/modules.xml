@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
-  <module moduleId="org.eclipse.jst.jee.server:Web_hard" serverId="Tomcat v8.5 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Dynamic" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:10-01_Bean" serverId="Tomcat v8.5 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Servlet" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:SummerNote" serverId="Tomcat v8.5 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Board" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Mvc1_Board" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Action" serverId="Tomcat v8.5 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:0917_Servlet" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Mvc1_BoardClone" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:0923_Session" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:0924_JSP" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:10-01_BeanClone" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Web_hard" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Dynamic" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Servlet" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Board" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:0917_Servlet" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
