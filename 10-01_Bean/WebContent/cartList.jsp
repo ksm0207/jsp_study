@@ -133,11 +133,20 @@ onclick="del('<%=pvo.getP_num()%>')">
         				
         				if(data.chk){
         					alert(data.chk);
-        					
+        				
         					let total = $("#total").text();
-        					let tbody = $("tr").children("td").eq(5).text();
+        					// let tbody = $("#table tbody td:nth-child("+(4+1)+")").text();
+        					let tbody = $("#table tr").eq(table.rowIdx).children("td")[4];
         					
-        					let idx = ("#table tbody td:nth-child")
+        					let money = $(tbody).find("span").text();
+        					
+        					let totalPrice = total - money;
+        					
+        					$("#total").text(totalPrice);
+
+ 							table.deleteRow(table.rowIdx);
+        					
+        					/*
         				 
         					console.log("Tbody : "+tbody);
         					
@@ -148,13 +157,12 @@ onclick="del('<%=pvo.getP_num()%>')">
         					let salePrice = tbody;
         					console.log("SalePrice ==" + salePrice);
         					
-        					let result = totalPrice - 1150 ;
+        					let result = totalPrice - salePrice ;
         					
         					console.log(result);
+        					*/
         					
-        					 $("#total").text(result);
-
-							// table.deleteRow(table.rowIdx);
+        					
         					
         				}
         				
