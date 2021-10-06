@@ -154,20 +154,65 @@
          	// 전체레코드 수 : 21 일때
          	// 1. 페이지의 시작번호 : 1
          	// 2. 페이지의 마지막 : 5 가 됨.
-         	int begin = (nowPage - 1 )*numPerPage +1; // 페이지의 첫 시작
+         	int begin = (nowPage - 1 )*numPerPage +1; // 한 페이지의 보여질 첫 시작
          	int end = nowPage - numPerPage; // 페이지의 마지막 번호 
+         	
+         	// 현재페이지 값에 의해 블럭의 시작페이지 값 구하기
+         	int startPage = (int)((nowPage -1) / pagePerBlock) * pagePerBlock + 1;
+         	
+         	// 블럭의 마지막 페이지 값 구하기
+         	int endPage = (startPage + pagePerBlock) -1;
+         	
+         	// 총 페이지 수가 endPage보다 작다면 .. 총 페이지 수를 넘어 표현되는범위를 막아준다.
+         	// 결론 : endPage가 totalPage보다 크면안됨.
+         	
+         	if(endPage > totalPage){
+         		endPage = totalPage;
+         	}
+         	
+         	// 이전블럭으로 이동하는 여부는 startPage가 1보다 클때를 의미함
+         	// startPage => 1 , 6 , 11 , 16 ..
+         	// 또는 startPage가 pagePerBlock보다 작다면 이전으로 기능을 막아야함
+         	
+         	if(startPage < pagePerBlock){
+         	
+         %>
+         	<li class="disable">&lt;</li>
+         <%
+         	}else{
          %>                         
             
 
-<li><a href="#">이전으로</a></li>
-
-	<li class="now">1</li>
-         
-	<li><a href="list.jsp?test=">2</a></li>
-
-
- 
-		<li><a href="#">다음으로</a></li>
+			<li><a href="list.jsp?cPage=<%=startPage - pagePerBlock %>">&gt;</a></li>
+<%
+      		}
+         	for(int i= startPage ; i <= endPage ; i ++){
+				
+         		if(nowPage == i){
+%>
+				<li class="now"><%=i %></li>
+<%
+       			}else{  	
+%>	
+				<li><a href="list.jsp?cPage=<%=i%>"><%=i %></a></li>	
+<%
+       			}
+         	}
+         	
+         	// 다음 블록으로 이동하는 기능을 부여해야 할지 말아야할지
+         	// endPage가 totalPage보다 작을 경우에만 부여하도록 하기
+         	
+         	if(endPage < totalPage){
+%>
+			<li><a href="list.jsp?cPage=<%=startPage + pagePerBlock%>">&gt;</a></li>
+<%
+         	}else{
+%>
+				<li class="disable">&gt;</li>
+<%
+         	}
+%>
+		
 	
                               </ol>
                           </td>
@@ -192,7 +237,7 @@
 				<tr>
 					<td><%=bvo.getB_idx()%></td>
 					<td style="text-align: left">
-						<a href="#">
+						<a href="view.jsp?cPage=<%=nowPage%>&b_idx=<%=bvo.getB_idx()%>">
 						<%=bvo.getSubject() %>
 					</a></td>
 					<td><%=bvo.getWriter()%></td>

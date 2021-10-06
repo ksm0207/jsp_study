@@ -46,7 +46,65 @@
   		  		FROM bbs_t
   		WHERE status = 0
   	</select>
-  
+  	
+  	<insert id="add" parameterType="java.util.Map">
+		INSERT INTO bbs_t(b_idx,subject,writer,content,file_name,pwd,write_date,ip,hit,status)
+		VALUES(
+		bbs_t_seq.nextVal,
+		#{subject},
+		#{writer},
+		#{content},
+		#{file_name},
+		#{pwd},
+		sysdate,
+		#{ip},
+		0,
+		0
+		)
+
+</insert>
+
+	<!-- 기본키(b_idx)를 인자로 받고 원글을 검색해주는 쿼리문 -->
+  	<select id="search" parameterType="int" resultMap="map">
+  	
+  		select * from bbs_t
+		where b_idx = #{b_idx}
+  	</select>
+  	
+  	<!-- 댓글 저장 , 파일첨부가 안됐을때는 이렇게 사용하도록 하자. -->
+  	
+  	<insert id="ans" parameterType="mybatis.vo.CommentVO">
+  	
+  		INSERT INTO comment_t(c_idx,writer,content,write_date,b_idx)
+  		
+  		VALUES(
+  			comment_t_seq.nextval,
+  			#{writer},
+  			#{content},
+  			sysdate,
+  			#{b_idx}
+  		)
+  	
+  	</insert>
+  	 
+  	<update id="update" parameterType="java.util.Map">
+  		UPDATE bbs_t
+			SET
+			
+			subject = #{subject},
+			writer = #{writer},
+			content = #{content}
+		
+		WHERE b_idx = #{b_idx} AND pwd = #{pwd}
+  	</update>
+  	
+  	<update id="hit" parameterType="String">
+  		
+  		UPDATE bbs_t
+  		SET hit = hit +1
+  		WHERE b_idx = #{b_idx}
+  	
+  	</update>
   
   	
 </mapper>

@@ -14,6 +14,7 @@ public class BbsVO {
 	private String ori_name;
 	private String write_date;
 	private String ip;
+	private String pwd;
 	private int hit;
 	private int status;
 	
@@ -23,6 +24,14 @@ public class BbsVO {
 	
 	public String getB_idx() {
 		return b_idx;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 
 	public List<CommentVO> getCvo_list() {
