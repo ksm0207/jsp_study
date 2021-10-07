@@ -106,7 +106,7 @@
          <%
             
          	int nowPage = 1 ;    // 현재 페이지 
-         	int numPerPage = 10; // 한 페이지당 보여질 게시물 수
+         	int numPerPage = 5; // 한 페이지당 보여질 게시물 수
          	
          	// 페이징을 위한 변수 선언      	
          	
@@ -155,7 +155,7 @@
          	// 1. 페이지의 시작번호 : 1
          	// 2. 페이지의 마지막 : 5 가 됨.
          	int begin = (nowPage - 1 )*numPerPage +1; // 한 페이지의 보여질 첫 시작
-         	int end = nowPage - numPerPage; // 페이지의 마지막 번호 
+         	int end = nowPage * numPerPage; // 페이지의 마지막 번호 
          	
          	// 현재페이지 값에 의해 블럭의 시작페이지 값 구하기
          	int startPage = (int)((nowPage -1) / pagePerBlock) * pagePerBlock + 1;
@@ -227,7 +227,7 @@
 				<%
 					
 					// 1. 게시물 목록을 가져오기
-					BbsVO[] ar = BbsDAO.getList(1,10);
+					BbsVO[] ar = BbsDAO.getList(begin,end);
 					
 					if(ar != null){
 						for(int i=0; i < ar.length; i++){

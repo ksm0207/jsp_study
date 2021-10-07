@@ -54,7 +54,7 @@
 	.title{background:lightsteelblue}
 	
 	.odd {background:silver}
-	
+	.disable{background:#efefef; border: 1px soild #efefef;}
 		
 </style>
 
@@ -72,9 +72,9 @@
 					<td><input type="text" value="<%=bvo.getSubject() %>" name="title" size="45"/></td>
 				</tr>
 				<tr>
-					<th>이름:</th>
-					<td><input type="text" value="<%=bvo.getWriter() %>" name="writer" size="12"/></td>
-				</tr>
+					<th>이름:</th>                                       <!--readonly 속성은 값을 수정하지 못하지만 파라미터 전달이 가능함  -->
+					<td><input type="text" value="<%=bvo.getWriter() %>"  readonly="readonly" class="disable"  name="writer"  size="12"/></td>
+				</tr>                                                   <!-- disabled 속성은 readonly와 비슷하지만 파라미터 전달이 X -->
 				<tr>
 					<th>내용:</th>
 					<td>

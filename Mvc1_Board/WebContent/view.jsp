@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="mybatis.vo.CommentVO"%>
 <%@page import="mybatis.vo.BbsVO"%>
@@ -52,23 +53,57 @@
 </style>
 
 </head>
+
+<%!
+	List<BbsVO> r_list;
+
+	public boolean checkBbs(BbsVO bvo){
+		boolean check = false;
+		
+		for(BbsVO vo : r_list){
+			if(vo.getB_idx().equals(bvo.getB_idx())){
+				check = true;
+				break;
+			}
+		}
+		return check;
+	}
+	
+%>
 	
 
 <body>
 <%
 		String index = request.getParameter("b_idx");
-		
 		// cPage : 원래 페이지로 돌아가기위한 변수
 	    String cPage = request.getParameter("cPage");
 		
+		// view.jsp 에서 새로고침을 하면 조회수가 늘어나는것을 방지 시작
+		// 1. 세션에 저장된 read_list이름의 객체를 얻는다. - 세션처리
+		Object obj = session.getAttribute("read_list");
 
-		BbsDAO.setBoardHit(index);
+		if(obj == null){
+			// 저장된 겂이 없으니깐 만들어서 저장해주기
+			r_list = new ArrayList<BbsVO>();
+			session.setAttribute("read_list", r_list);
+		}else{
+			r_list = (List<BbsVO>)obj;
+		}
 		
 		int b_idx = Integer.parseInt(index);
+		
 		
 		if(b_idx > 0){
 			BbsVO bvo = BbsDAO.search(b_idx);
 			
+			boolean flag = checkBbs(bvo); // 한번이라도 읽은 게시물인지 확인하는 메소드 
+			// 한번 읽기를 한 게시물은 r_list에 저장됨.
+			// bvo 가 r_list에 있다면 조회수가 +1 한 경우
+			// 없으면 조회수를 늘려준다
+			if(!flag){
+				BbsDAO.setBoardHit(index);
+				r_list.add(bvo);
+			}
 	
 %>
 	<div id="bbs">
@@ -82,8 +117,6 @@
 				</tr>
 						<%
 							if(bvo.getFile_name() != null && bvo.getFile_name().length() > 4){
-								
-							
 						%>
 				<tr>
 					<th>첨부파일:</th>
@@ -163,3 +196,5 @@
 	
 </body>
 </html>
+
+	
