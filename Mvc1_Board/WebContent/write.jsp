@@ -5,6 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="./css/summernote-lite.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./js/summernote-lite.js"></script>
+<script src="./js/lang/summernote-ko-KR.js"></script>
 <style type="text/css">
 	#bbs table {
 	    width:580px;
@@ -78,7 +82,7 @@
 				</tr>
 				<tr>
 					<th>내용:</th>
-					<td><textarea name="content" cols="50" 
+					<td><textarea id="content" name="content" cols="50" 
 							rows="8"></textarea></td>
 				</tr>
 				<tr>
@@ -107,6 +111,15 @@
 			location.href='list.jsp';
 			
 		}
+		$(function(){
+			$("#content").summernote({
+				lang: "ko-KR",
+				width:500,
+				height:200,
+				minHeight:200,
+				maxHeight:400,
+			});
+		})
 	</script>
 </body>
 </html>
