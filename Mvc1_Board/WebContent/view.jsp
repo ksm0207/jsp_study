@@ -11,6 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 	#bbs table {
@@ -107,7 +108,7 @@
 	
 %>
 	<div id="bbs">
-	<form method="post" >
+	<form method="post" name = "form">
 		<table summary="게시판 글쓰기">
 			<caption>게시판 글쓰기</caption>
 			<tbody>
@@ -178,6 +179,7 @@
 	<form name="frm" method="POST">
 		<input type="hidden" name="cPage" value="<%=cPage%>">
 		<input type="hidden" name="b_idx" value="<%=bvo.getB_idx()%>">
+		<input type="hidden" name="f_name">
 	</form>
 	<%
 		}else{
@@ -191,6 +193,13 @@
 	<script>
 		function goList(){
 			location.href='list.jsp?=<%=cPage%>';
+		}
+		
+		function download(file){
+			document.frm.f_name.value = file;
+			document.frm.action = 'download.jsp';
+			document.frm.submit();
+			
 		}
 	</script>
 	
