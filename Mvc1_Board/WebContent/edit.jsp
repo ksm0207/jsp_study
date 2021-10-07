@@ -18,6 +18,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<!-- summer note -->
+<link rel="stylesheet" href="./css/summernote-lite.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./js/summernote-lite.js"></script>
+<script src="./js/lang/summernote-ko-KR.js"></script>
+<!-- end -->
+
 <style type="text/css">
 	#bbs table {
 	    width:580px;
@@ -78,7 +86,7 @@
 				<tr>
 					<th>내용:</th>
 					<td>
-					<textarea name="content" cols="50" 
+					<textarea id="content" name="content" cols="50" 
 							rows="8"><%=bvo.getContent() %> </textarea>
 							
 					</td>
@@ -111,6 +119,19 @@
 		</table>
 	</form>
 	</div>
+	
+	<script>
+	
+	$(function(){
+		$("#content").summernote({
+			lang: "ko-KR",
+			width:500,
+			height:200,
+			minHeight:200,
+			maxHeight:400,
+		});
+	})
+	</script>
 
 </body>
 </html>

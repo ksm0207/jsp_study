@@ -179,9 +179,6 @@
 					// image : <img src="/upload_img/test.jpg>"
 					$("#content").summernote("insertNode",image[0]);
 					alert("Done");
-					
-					
-					
 				})
 				.fail(function(data){
 					alert("fail");

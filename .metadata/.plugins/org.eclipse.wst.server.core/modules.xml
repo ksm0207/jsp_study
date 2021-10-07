@@ -12,5 +12,6 @@
   <module moduleId="org.eclipse.jst.jee.server:Dynamic" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Servlet" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Board" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:MVC2" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:0917_Servlet" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
