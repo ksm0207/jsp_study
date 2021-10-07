@@ -56,18 +56,30 @@
 </head>
 
 <%!
-	List<BbsVO> r_list;
+	ArrayList<BbsVO> r_list;
 
 	public boolean checkBbs(BbsVO bvo){
-		boolean check = false;
+		boolean check = true;
 		
 		for(BbsVO vo : r_list){
 			if(vo.getB_idx().equals(bvo.getB_idx())){
-				check = true;
+				check = false;
 				break;
 			}
 		}
-		return check;
+		/*
+		for(int i=0; i<r_list.size() ; i ++){
+			BbsVO vo = r_list.get(i);
+			
+			if(vo.getB_idx().equals(bvo.getB_idx())){
+				check = false;
+				break;
+			}
+			
+		}
+		*/
+		
+		return check; // return false;
 	}
 	
 %>
@@ -82,15 +94,19 @@
 		// view.jsp 에서 새로고침을 하면 조회수가 늘어나는것을 방지 시작
 		// 1. 세션에 저장된 read_list이름의 객체를 얻는다. - 세션처리
 		Object obj = session.getAttribute("read_list");
-
+		System.out.println("Object : "+obj);
+		
 		if(obj == null){
 			// 저장된 겂이 없으니깐 만들어서 저장해주기
 			r_list = new ArrayList<BbsVO>();
+			System.out.println("r_list size() : " + r_list);
 			session.setAttribute("read_list", r_list);
+			
+			
 		}else{
-			r_list = (List<BbsVO>)obj;
+			r_list = (ArrayList<BbsVO>)obj;
 		}
-		
+		System.out.println("r_list size() : " + r_list);
 		int b_idx = Integer.parseInt(index);
 		
 		
@@ -101,9 +117,11 @@
 			// 한번 읽기를 한 게시물은 r_list에 저장됨.
 			// bvo 가 r_list에 있다면 조회수가 +1 한 경우
 			// 없으면 조회수를 늘려준다
-			if(!flag){
-				BbsDAO.setBoardHit(index);
+			System.out.println("Flag : " + flag);
+			
+			if(flag){
 				r_list.add(bvo);
+				BbsDAO.setBoardHit(index);
 			}
 	
 %>

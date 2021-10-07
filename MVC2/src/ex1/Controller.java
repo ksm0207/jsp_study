@@ -58,6 +58,7 @@ public class Controller extends HttpServlet {
 		// MVC환경에서는 뷰 페이지 이동은 for-ward를 시킨다! ★
 		// getRequestDispatcher ★
 		RequestDispatcher req = request.getRequestDispatcher(viewPath);
+		
 		req.forward(request, response); // for-ward로 이동하기.
 		
 	}
@@ -67,6 +68,7 @@ public class Controller extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
