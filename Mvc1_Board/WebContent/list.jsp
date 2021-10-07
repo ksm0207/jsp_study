@@ -239,7 +239,18 @@
 					<td style="text-align: left">
 						<a href="view.jsp?cPage=<%=nowPage%>&b_idx=<%=bvo.getB_idx()%>">
 						<%=bvo.getSubject() %>
-					</a></td>
+						
+						<!-- 댓글 표시 -->
+						<%
+							if(bvo.getCvo_list() != null && !bvo.getCvo_list().isEmpty()){
+						%>
+							(<%=bvo.getCvo_list().size()%>)
+						<%
+							}
+						%>
+						</a>
+						<!--  댓글 표시 끝 -->
+					</td>
 					<td><%=bvo.getWriter()%></td>
 					<td>
 						<%

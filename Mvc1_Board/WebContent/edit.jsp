@@ -65,7 +65,7 @@
 	
 	<form action="edit_ok.jsp?cPage=<%=cPage%>&b_idx=<%=bvo.getB_idx() %>" method="post">
 		<table summary="게시판 글쓰기">
-			<caption>게시판 글쓰기</caption>
+			<caption>게시판 수정</caption>
 			<tbody>
 				<tr>
 					<th>제목:</th>

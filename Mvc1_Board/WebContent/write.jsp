@@ -94,12 +94,19 @@
 						<input type="button" value="보내기"
 						onclick="sendData()"/>
 						<input type="button" value="다시"/>
-						<input type="button" value="목록"/>
+						<input type="button" value="목록" onclick="goList();"/>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</form>
 	</div>
+	<script>
+		function goList(){
+			
+			location.href='list.jsp';
+			
+		}
+	</script>
 </body>
 </html>

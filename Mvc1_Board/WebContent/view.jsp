@@ -65,10 +65,10 @@
 		BbsDAO.setBoardHit(index);
 		
 		int b_idx = Integer.parseInt(index);
-		int i = 1;
+		
 		if(b_idx > 0){
 			BbsVO bvo = BbsDAO.search(b_idx);
-			bvo.setHit(i++);
+			
 	
 %>
 	<div id="bbs">
@@ -154,8 +154,6 @@
 	<%
 		}
 	%>
-	
-	
 	
 	<script>
 		function goList(){
