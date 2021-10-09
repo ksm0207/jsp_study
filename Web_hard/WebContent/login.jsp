@@ -1,5 +1,5 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="mybatis.dao.MemDAO"%>
+<%@page import="ex3.dao.MemDAO"%>
 <%@page import="mybatis.vo.MemVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

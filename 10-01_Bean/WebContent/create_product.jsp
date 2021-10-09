@@ -1,5 +1,5 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="mybatis.dao.ShopDAO"%>
+<%@page import="ex3.dao.ShopDAO"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

@@ -62,10 +62,17 @@
 		boolean check = true;
 		
 		for(BbsVO vo : r_list){
-			if(vo.getB_idx().equals(bvo.getB_idx())){
+			//if(vo.getB_idx().equals(bvo.getB_idx())){
+			int a = vo.getB_idx().compareTo(bvo.getB_idx());
+			
+			if(a == 0){
 				check = false;
 				break;
+				
 			}
+				
+			
+				//}
 		}
 		/*
 		for(int i=0; i<r_list.size() ; i ++){
