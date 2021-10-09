@@ -28,21 +28,30 @@ public class EmpDAO {
 		return ar;
 	}
 	
-	public static EmpVO search(String type , String value) {
+	public static EmpVO[] getSearch(String searchType , String searchValue) {
 		
-		EmpVO evo = null;
-		SqlSession session = Service.getFactory().openSession();
-		Map<String,String> map = new HashMap<String, String>();
+		EmpVO[] ar = null;
 		
-		map.put("searchType", type);
-		map.put("query",value);
+		SqlSession sql = Service.getFactory().openSession();
 		
-		evo = (EmpVO) session.selectList("emp.testSearch",map);
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("searchType", searchType);
+		map.put("searchValue",searchValue);
+		
+		List<EmpVO> list = sql.selectList("emp.search",map);
+		
+		if (list != null && list.size() > 0) {
+			
+			ar = new EmpVO[list.size()];
+			
+			list.toArray(ar);
+		}
 		
 		
-		session.close();
-		
-		return evo;
+		return ar;
 	}
+	
+	
 
 }

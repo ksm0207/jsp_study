@@ -13,7 +13,7 @@
 		
 	</select>
 	
-	<select id="testSearch" resultType="ex3.vo.EmpVO" parameterType="java.util.Map">
+	<select id="search" resultType="ex3.vo.EmpVO" parameterType="java.util.Map">
 	
 	SELECT
 	*
@@ -22,15 +22,15 @@
 	<where>
 		<choose>
 			<when test="searchType == 0">
-				employee_id = #{query}
+				employee_id = #{searchValue}
 			 </when>
 			 
 			 <when test="searchType == 1">
-				first_name = #{query}
+				first_name = #{searchValue}
 			 </when>
 	
 			 <when test="searchType == 2">
-				job_id = #{query}
+				job_id = #{searchValue}
 			 </when>
 		</choose>
 	</where>

@@ -48,7 +48,8 @@
 					// 컨트롤러에서 forward 방식으로 이동온다
 					// request에 저장된 정보들 중 "ar" 이라는 이름으로
 					// 저장된 정보를 얻어보자
-					Object o = request.getAttribute("res");
+					
+					Object o = request.getAttribute("ar");
 					EmpVO[] ar = null;
 					if(o != null){
 						ar = (EmpVO[])o;

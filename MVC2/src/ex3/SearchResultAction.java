@@ -11,22 +11,15 @@ public class SearchResultAction implements Action {
 	@Override
 	public String excute(HttpServletRequest request, HttpServletResponse response) {
 		
-		String name = request.getParameter("searchValue");
-		String[] idx = request.getParameterValues("option");
+		String searchType = request.getParameter("searchType");
+		String searchValue = request.getParameter("searchValue");
 		
+		System.out.println("SearchType Data Type : "+searchType.getClass().getName());
+		System.out.println("SearchValue Data Type : "+searchValue.getClass().getName());
 		
-		for(int i=0; i<idx.length; i++) {
-			System.out.println(idx[i]);
-			System.out.println("type : " + idx[i]);
-			System.out.println("searchValue" + name);
-		}
-	
-		String type = idx.toString();
+		EmpVO[] vo =  EmpDAO.getSearch(searchType, searchValue);
 		
-	
-		EmpVO vo = EmpDAO.search(type, name);
-		
-		request.setAttribute("res", vo);
+		request.setAttribute("ar", vo);
 		
 		return "./ex3/page6_res.jsp";
 	}
