@@ -9,20 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.CityAction;
-import bean.MovieAction;
+import bean.InterFaceAction;
+import bean.InterFaceAction2;
+import bean.NotFoundPage;
+import inter.Action;
 
 /**
- * Servlet implementation class BeanController
+ * Servlet implementation class MoveController
  */
-@WebServlet("/BeanController")
-public class BeanController extends HttpServlet {
+@WebServlet("/InterFaceController")
+public class InterFaceController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BeanController() {
+    public InterFaceController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,24 +34,24 @@ public class BeanController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Action action = null;
+		
 		String param = request.getParameter("search");
 		String location = "";
 		
-		if(param == null || param.equals("seoul")) {
-			
-			CityAction city = new CityAction();
-			location = city.getList(request, response);
-			
-		}else if (param.equals("movie")) {
-			
-			MovieAction movie = new MovieAction();
-			location = movie.getList(request, response);
+		if(param == null || param.equals("hello")) {
+			action = new InterFaceAction(); // hello
+		}else if(param.equals("bye")) {
+			action = new InterFaceAction2(); // bye
+		}else {
+			action = new NotFoundPage();
 		}
-		// ExController 와 다른건 Bean 객체를 사용한거지만
-		// 흐름은 똑같다..
+		
+		location = action.getList(request, response);
 		
 		RequestDispatcher disp = request.getRequestDispatcher(location);
 		disp.forward(request, response);
+		
 		
 	}
 
