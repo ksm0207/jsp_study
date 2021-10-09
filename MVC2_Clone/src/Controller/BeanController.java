@@ -1,4 +1,4 @@
-package ex1;
+package Controller;
 
 import java.io.IOException;
 
@@ -9,17 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.CityAction;
+import bean.MovieAction;
+
 /**
- * Servlet implementation class Controller
+ * Servlet implementation class BeanController
  */
-@WebServlet("/Controller")
-public class Controller extends HttpServlet {
+@WebServlet("/BeanController")
+public class BeanController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controller() {
+    public BeanController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,47 +32,30 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String type = request.getParameter("type");
-		/*
-		 	(1) 연습.
-		 	
-		 	type 의 값이 null 이거나 "greet" 이라면
-		 	view1.jsp로 경로를 지정하기
-		 	
-		 	(2)
-		 	
-		 	그렇지 않고 type의 값이 "hi"면 view2.jsp로 경로를 지정하기.
-		 	 
-		 * */
 		
-		// 위 조건을 가지고 view의 경로를 저장할 변수를 선언하기.
-		String viewPath = null;
 		
-		if(type == null || type.equals("greet")) {
-			
-			request.setAttribute("msg", "Controller 연습 1 ");
-			viewPath = "./jsp/view1.jsp";
-		}else if(type.equals("hi")) {
-			request.setAttribute("str", "Controller 연습 2");
-			viewPath = "./jsp/view2.jsp";
-		}else {
-			viewPath = "./jsp/404.jsp";
+		String param = request.getParameter("search");
+		String location = "";
+		
+		if(param == null || param.equals("seoul")) {
+			CityAction city = new CityAction();
+			location = city.getList(request, response);
+			System.out.println(location);
+		}else if (param.equals("movie")) {
+			MovieAction movie = new MovieAction();
+			location = movie.getList(request, response);
 		}
+		// ExController 와 다른건 Bean 객체를 사용한거지만
+		// 흐름은 똑같다..
 		
-		// MVC환경에서는 뷰 페이지 이동은 for-ward를 시킨다! ★
-		// getRequestDispatcher ★
-		RequestDispatcher req = request.getRequestDispatcher(viewPath);
-		
-		req.forward(request, response); // for-ward로 이동하기.
+		RequestDispatcher disp = request.getRequestDispatcher(location);
+		disp.forward(request, response);
 		
 	}
-	
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

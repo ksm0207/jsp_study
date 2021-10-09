@@ -136,7 +136,7 @@ public class Controller3 extends HttpServlet {
 		Action action = actionMap.get(type);
 		
 		String viewPath = action.excute(request, response);
-		
+		System.out.println("View Path : " + viewPath);
 		RequestDispatcher disp = request.getRequestDispatcher(viewPath);
 		disp.forward(request, response);
 		
