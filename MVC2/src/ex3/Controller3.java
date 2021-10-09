@@ -16,8 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.RealType;
 
 /**
  * Servlet implementation class Controller3
@@ -51,38 +50,28 @@ public class Controller3 extends HttpServlet {
 		// 첫 요청자에 의해 단 한번만 수행하는 역할을 함.
 		super.init();
 		// 현재 서블릿이 생성되면 전달받은 초기 파라미터를 가지고온다.
+		// props_path : /WEB-INF/action.properties 경로를 가진다
 		String props_path = getInitParameter("myParam");
 		System.out.println("Props_path : " + props_path);
-		// props_path : /WEB-INF/action.properties 경로를 가진다
-		
-		// 받은 파일의 경로를 절대경로화를 시켜준다 | 서블릿에서는 application을 직접구함
-		ServletContext context = getServletContext();
-		String realPath = context.getRealPath(props_path);
-		System.out.println("RealPath : " + realPath);
-		
-		// 절대경로를 만들어준 이유는 파일의 있는 내용을 읽어올려고 만들어주었다.
-		// 읽어오는 내용들은 Action 즉 파일에 정의한 내용들을 읽어줘야함
-		// 읽어들인 내용은 Properties 객체에 담아주도록 하자.
-		
+	
 		// 객체생성
 		Properties props = new Properties();
-	
+		
 		// 파일의 내용을 결과를 
 		// Properties 객체에 옮겨놓기 위해서 Stream 객체를 만들어준다.
 		// Properties load 메소드를 이용하여 내용을 읽기 할 수 있다
-		
 		FileInputStream fis = null;
 		
-		try {
-			
-			// 읽고
-			fis = new FileInputStream(realPath);
-			// 저장하고
-			props.load(fis); // action.properties파일의 내용을 읽은다음
-							 // Properties 객체에 K,V 쌍으로 저장해준다
-							 // 예 : greet -> ex3.GreetAction
-			System.out.println("읽은내용 : "+ props);
-			
+		
+	try {
+		// 읽고
+		fis = new FileInputStream(getPropertiesFile(props_path));
+		// 저장하고
+		props.load(fis); // action.properties파일의 내용을 읽은다음
+						 // Properties 객체에 K,V 쌍으로 저장해준다
+						 // 예 : greet -> ex3.GreetAction
+		System.out.println("읽은내용 : "+ props);
+		
 		} catch (Exception error) {
 			error.printStackTrace();
 		}
@@ -93,6 +82,7 @@ public class Controller3 extends HttpServlet {
 		
 		// ketSet() 메소드가 무엇을 반환하고 가져야만 하는지 검색해서 알아보기.
 		// ▼ iter : greet , hello , now Key값을 가지고있음
+	
 		Iterator<Object> iter = props.keySet().iterator();
 		
 		// Key를 모두 얻었으니 연결된 클래스경로를 하나씩 꺼내서 객체를 생성해보자.
@@ -123,6 +113,8 @@ public class Controller3 extends HttpServlet {
 			}
 			
 		};
+		
+		
 	}
 
 
@@ -157,5 +149,23 @@ public class Controller3 extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+	
+	private String getPropertiesFile(String path) {
+		
+		// 받은 파일의 경로를 절대경로화를 시켜준다 | 서블릿에서는 application을 직접구함
+		ServletContext context = getServletContext();
+		String realPath = context.getRealPath(path);
+		
+		// 절대경로를 만들어준 이유는 파일의 있는 내용을 읽어올려고 만들어주었다.
+		// 읽어오는 내용들은 Action 즉 파일에 정의한 내용들을 읽어줘야함
+		// 읽어들인 내용은 Properties 객체에 담아주도록 하자.
+		try {
+			if(realPath.length() > 0 && realPath != null)
+				return realPath;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }

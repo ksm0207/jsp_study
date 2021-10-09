@@ -48,7 +48,6 @@ public class EmpDAO {
 			list.toArray(ar);
 		}
 		
-		
 		return ar;
 	}
 	
