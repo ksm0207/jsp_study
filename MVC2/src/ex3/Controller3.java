@@ -16,8 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.RealType;
-
 /**
  * Servlet implementation class Controller3
  */

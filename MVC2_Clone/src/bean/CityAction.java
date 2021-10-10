@@ -3,8 +3,11 @@ package bean;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CityAction {
+import inter.Action;
+
+public class CityAction implements Action {
 	
+	@Override
 	public String getList(HttpServletRequest request , HttpServletResponse response) {
 	
 		request.setAttribute("seoul", "¼­¿ï");
