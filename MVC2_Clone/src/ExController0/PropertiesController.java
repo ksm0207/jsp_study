@@ -1,4 +1,4 @@
-package Controller;
+package ExController0;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,6 +21,8 @@ import inter.Action;
 /**
  * Servlet implementation class PropertiesController
  */
+
+// http://localhost:9090/MVC2/Controller
 @WebServlet( urlPatterns = {"/PropertiesController"},
 	initParams = {
 			@WebInitParam(name="param",value="/WEB-INF/prop/bean.properties")

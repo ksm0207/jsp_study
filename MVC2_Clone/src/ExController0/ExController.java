@@ -1,4 +1,4 @@
-package Controller;
+package ExController0;
 
 import java.io.IOException;
 
@@ -9,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.CityAction;
-import bean.MovieAction;
-
 /**
- * Servlet implementation class BeanController
+ * Servlet implementation class Controller
  */
-@WebServlet("/BeanController")
-public class BeanController extends HttpServlet {
+@WebServlet("")
+public class ExController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BeanController() {
+    public ExController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,32 +27,36 @@ public class BeanController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String param = request.getParameter("search");
+		String param = request.getParameter("fruit");
 		String location = "";
 		
-		if(param == null || param.equals("seoul")) {
-			
-			CityAction city = new CityAction();
-			location = city.getList(request, response);
-			
-		}else if (param.equals("movie")) {
-			
-			MovieAction movie = new MovieAction();
-			location = movie.getList(request, response);
+		if(param == null || param.equals("apple")) {
+			request.setAttribute("apple", "사과");
+			location = "./jsp/apple.jsp";
+		}else if(param.equals("banana")) {
+			request.setAttribute("banana", "바나나");
+			location = "./jsp/banana.jsp";
+		}else if(param.equals("blueberry")) {
+			request.setAttribute("blueberry", "블루베리");
+			location = "./jsp/blueberry.jsp";
 		}
-		// ExController 와 다른건 Bean 객체를 사용한거지만
-		// 흐름은 똑같다..
+		 // request = "?" 요청할때마다  else if .. else if .. 유지보수 작업이 번거로워 진다고 생각이 든다..
+		else {
+			location = "./jsp/404.jsp";
+		}
 		
-		RequestDispatcher disp = request.getRequestDispatcher(location);
-		disp.forward(request, response);
+		RequestDispatcher viewPage = request.getRequestDispatcher(location);
+		viewPage.forward(request, response);
 		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

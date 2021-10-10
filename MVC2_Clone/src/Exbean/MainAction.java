@@ -1,19 +1,16 @@
-package bean;
+package Exbean;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import inter.Action;
 
-public class InterFaceAction implements Action {
+public class MainAction implements Action{
 
 	@Override
 	public String getList(HttpServletRequest request, HttpServletResponse response) {
 		
-		request.setAttribute("hello", "InterFace Action - Hello !");
-		
-		return "./jsp/hello.jsp";
-		
+		return "./jsp/main.jsp";
 	}
 
 }

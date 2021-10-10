@@ -1,4 +1,4 @@
-package Controller;
+package ExController0;
 
 import java.io.IOException;
 
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.InterFaceAction;
-import bean.InterFaceAction2;
-import bean.NotFoundPage;
+import Exbean.InterFaceAction;
+import Exbean.InterFaceAction2;
+import Exbean.NotFoundPage;
 import inter.Action;
 
 /**

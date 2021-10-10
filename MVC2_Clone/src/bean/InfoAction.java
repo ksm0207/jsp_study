@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import inter.Action;
 
-public class MainAction implements Action {
+public class InfoAction implements Action {
 
 	@Override
 	public String getList(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return "./emp/main.jsp";
+		
+		return "./emp/emp_form.jsp";
 	}
 
 }
