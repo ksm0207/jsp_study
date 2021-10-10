@@ -23,14 +23,14 @@ import inter.Action;
  */
 @WebServlet( urlPatterns = {"/PropertiesController"},
 	initParams = {
-			@WebInitParam(name="param",value="/WEB-INF/bean.properties")
+			@WebInitParam(name="param",value="/WEB-INF/prop/bean.properties")
 	})
 
 public class PropertiesController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private Map<String,Action> actionMap;
-       
+	Map<String,Action> actionMap;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,75 +41,65 @@ public class PropertiesController extends HttpServlet {
     
     @Override
     public void init() throws ServletException {
-    	// TODO Auto-generated method stub
     	super.init();
     	
     	Properties props = new Properties();
     	FileInputStream fis = null;
     	
     	String propsPath = getInitParameter("param");
-    	System.out.println("propsPath : " + propsPath);
+    	System.out.println(propsPath);
     	
     	ServletContext context = getServletContext();
     	String realPath = context.getRealPath(propsPath);
+    	System.out.println(realPath);
     	
-    	
-    	
-    	
-		try {
-    		
+    	try {
+    
     		fis = new FileInputStream(realPath);
     		props.load(fis);
     		System.out.println("파일 내용 : " + props);
-    		
-    	}catch (Exception e) {
+			
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		Iterator<Object> iter =  props.keySet().iterator();
-		
-		while(iter.hasNext()) {
-			
-			String key = (String)iter.next();
-			System.out.println("Key 값 : " + key);
-			
-			String getPros = props.getProperty(key);
-			System.out.println("getPros : " + getPros);
-			
-			try {
-				Object obj = Class.forName(getPros).newInstance();
-				System.out.println("Class.forName : " + obj);
+    	
+    	Iterator<Object> iter = props.keySet().iterator();
+    	
+    	while(iter.hasNext()) {
+    		
+    		String key = (String)iter.next(); // true -> key
+    		System.out.println("Key : " + key);
+    		String value = props.getProperty(key); // 이 속성 목록에서 지정한 키를 사용하여 속성을 검색하고 속성을 반환합니다
+    		System.out.println("Value : " + value);
+    		
+    		try {
+    			
+				Object obj = Class.forName(value).newInstance();
+				actionMap.put(key, (Action)obj);
 				
-				actionMap.put(key, (Action) obj);
-				System.out.println("ActionMap Size : "+actionMap.size());
-				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+    		}catch (Exception e) {
+    			e.printStackTrace();
 			}
-			
-		}
+    	}
     }
-    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String search = request.getParameter("search");
-		System.out.println("Search : " + search);
+		String param = request.getParameter("search");
 		
-		if(search == null) {
-			search = "index";
+		if(param == null) {
+			param = "index";
 		}
 		
-		Action action = actionMap.get(search);
+		Action action = actionMap.get(param);
 		
 		String location = action.getList(request, response);
-
+		System.out.println("Location : "+location);
+		
 		RequestDispatcher disp = request.getRequestDispatcher(location);
 		disp.forward(request, response);
-		
 	}
 
 	/**
