@@ -14,7 +14,13 @@
 
 </select>
 
+<select id="check_id" parameterType="String" resultType="mybatis.vo.MemberVO">
 
+	SELECT *
+	FROM member
+	WHERE member_id = #{member_id}
+
+</select>
 
 <insert id="add" parameterType="java.util.Map">
 
@@ -24,9 +30,9 @@
 		#{member_pw},
 		#{member_name},
 		#{member_phone},
-		0)
-		
+		0)		
 </insert>
+
 
 	
 	

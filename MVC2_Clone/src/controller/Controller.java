@@ -92,7 +92,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String param = request.getParameter("search");
-		
+		System.out.println(param);
 		if(param == null) {
 			param = "main";
 		}

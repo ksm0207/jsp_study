@@ -19,7 +19,7 @@
 		}else{
 	%>
 		<h1>유저를 출력하세요</h1>
-		<form action="MemberController">
+		<form action="MemberController" method="POST">
 			<label>ID :</label>
 			<input type="text" name = "id"><br>
 			

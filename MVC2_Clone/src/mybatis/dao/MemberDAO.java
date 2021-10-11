@@ -47,6 +47,22 @@ public class MemberDAO {
 		sql.close();
 		
 		return mvo;
+	}
+	
+	public static boolean checkID(String member_id) {
 		
+		SqlSession sql = FactoryService.getFactory().openSession();
+		
+		MemberVO mvo = sql.selectOne("member.check_id",member_id);
+		
+		boolean check = false;
+		
+		if(mvo == null) {
+			check = true;
+		}
+		sql.close();
+		
+		return check;
+	
 	}
 }
