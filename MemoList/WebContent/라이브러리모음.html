@@ -10,3 +10,18 @@
 
 <!-- 전체 시퀀스 조회  -->
 SELECT * FROM USER_SEQUENCES         
+
+<!-- 시퀀스 생성 -->
+
+CREATE SEQUENCE MEMBER_SEQ --시퀀스이름 EX_SEQ
+INCREMENT BY 1 --증감숫자 1
+START WITH 1 --시작숫자 1
+MINVALUE 1 --최소값 1
+MAXVALUE 1000 --최대값 1000
+NOCYCLE --순한하지않음
+CACHE; --메모리에 시퀀스값 미리할당
+
+CREATE SEQUENCE MEMBER_SEQ 
+INCREMENT BY 1 
+START WITH 1
+
