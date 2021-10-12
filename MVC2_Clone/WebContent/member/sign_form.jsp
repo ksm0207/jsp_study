@@ -16,7 +16,7 @@
 			
 		<label>ID : </label>
 		<input type="text" id = "id" name = "id">
-		<span id="check"></span>
+		<div id="check"></div>
 		<br>
 		
 		<label>PW: </label>

@@ -15,7 +15,5 @@ public class CheckID implements Action{
 		
 		return "./member/id_check.jsp";
 	}
-	
-	
 
 }

@@ -94,7 +94,7 @@ public class MemberController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String param = request.getParameter("search");
-		
+		System.out.println("Parameter : " + param);
 		if(param == null) {
 			param = "index";
 		}
