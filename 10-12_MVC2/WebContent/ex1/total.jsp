@@ -191,11 +191,10 @@
 			let hire_date = $("#hire_date").val();
 			let department_id = $("#department_id").val();
 			
-			console.log(emp_data);
-			
 			$.ajax({
 				url : "Controller",
-				data : "search="+"result&employee_id="+emp_no.trim()+"&first_name="+first_name.trim(),
+				data : "search="+"result&employee_id="+emp_no.trim()+"&first_name="+first_name.trim()+"&last_name="+last_name.trim()
+				                                      +"&email="+email.trim()+"&job_id="+job_id.trim()+"&hire_date="+hire_date+"&department_id="+department_id,
 				type : "POST"
 			})
 			.done(function(data){
@@ -205,7 +204,7 @@
 				alert("error");
 			})
 			
-			// document.forms[0].submit();
+			document.forms[0].submit();
 			
 		}
 		

@@ -57,7 +57,6 @@ INDEX VERSION 1.131+C:\Users\user\Documents\GitHub\jsp\work\.metadata\.plugins\o
 2475427878.index
 262558683.index
 4254577781.index
-1031368610.index
 2925787099.index
 810660114.index
 1750276749.index
