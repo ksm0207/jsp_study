@@ -177,13 +177,13 @@
          	if(startPage < pagePerBlock){
          	
          %>
-         	<li class="disable">&lt;</li>
+         	<li class="disable">&lt;start</li>
          <%
          	}else{
          %>                         
             
 
-			<li><a href="list.jsp?cPage=<%=startPage - pagePerBlock %>">&gt;</a></li>
+			<li><a href="list.jsp?cPage=<%=startPage - pagePerBlock %>">&gt;end</a></li>
 <%
       		}
          	for(int i= startPage ; i <= endPage ; i ++){
